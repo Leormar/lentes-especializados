@@ -1,24 +1,40 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/quienes-somos", label: "Nosotros" },
   { href: "/servicios", label: "Servicios" },
-  { href: "/blog", label: "Educación" },
-  { href: "/quienes-somos", label: "Quiénes somos" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/contacto", label: "Contáctenos" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-sky-100">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-sky-100 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 font-semibold text-[#0c4a6e]">
-          <EyeIcon />
-          <span className="text-lg tracking-tight">Lentes Especializados</span>
+        <Link href="/" className="flex items-center gap-2.5">
+          {!logoError ? (
+            <Image
+              src="/logo.png"
+              alt="Lentes Especializados"
+              width={160}
+              height={48}
+              className="h-10 w-auto object-contain"
+              onError={() => setLogoError(true)}
+              priority
+            />
+          ) : (
+            <span className="flex items-center gap-2 font-semibold text-[#0c4a6e]">
+              <EyeIcon />
+              <span className="text-lg tracking-tight">Lentes Especializados</span>
+            </span>
+          )}
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -32,12 +48,12 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20una%20consulta%20sobre%20lentes%20especializados"
+            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm bg-[#0c4a6e] text-white px-4 py-2 rounded-full font-medium hover:bg-[#082f49] transition-colors"
           >
-            Agendar cita
+            Solicitar cita
           </a>
         </div>
 
@@ -63,12 +79,12 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20una%20consulta%20sobre%20lentes%20especializados"
+            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 block text-center bg-[#0c4a6e] text-white px-4 py-3 rounded-full font-medium"
           >
-            Agendar cita por WhatsApp
+            Solicitar cita
           </a>
         </div>
       )}
