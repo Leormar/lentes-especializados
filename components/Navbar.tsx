@@ -30,7 +30,7 @@ export default function Navbar() {
               priority
             />
           ) : (
-            <span className="flex items-center gap-2 font-semibold text-[#0c4a6e]">
+            <span className="flex items-center gap-2 font-semibold text-[#1e3a8a]">
               <EyeIcon />
               <span className="text-lg tracking-tight">Lentes Especializados</span>
             </span>
@@ -42,7 +42,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm text-slate-600 hover:text-[#0c4a6e] font-medium transition-colors"
+              className="text-sm text-slate-600 hover:text-[#1e3a8a] font-medium transition-colors"
             >
               {l.label}
             </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
             href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm bg-[#0c4a6e] text-white px-4 py-2 rounded-full font-medium hover:bg-[#082f49] transition-colors"
+            className="text-sm bg-[#1e3a8a] text-white px-4 py-2 rounded-full font-medium hover:bg-[#132660] transition-colors"
           >
             Solicitar cita
           </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
             href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 block text-center bg-[#0c4a6e] text-white px-4 py-3 rounded-full font-medium"
+            className="mt-3 block text-center bg-[#1e3a8a] text-white px-4 py-3 rounded-full font-medium"
           >
             Solicitar cita
           </a>
@@ -95,9 +95,9 @@ export default function Navbar() {
 function EyeIcon() {
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <ellipse cx="14" cy="14" rx="12" ry="8" stroke="#0c4a6e" strokeWidth="2" />
-      <circle cx="14" cy="14" r="4" fill="#0ea5e9" />
-      <circle cx="14" cy="14" r="2" fill="#0c4a6e" />
+      <ellipse cx="14" cy="14" rx="12" ry="8" stroke="#1e3a8a" strokeWidth="2" />
+      <circle cx="14" cy="14" r="4" fill="#4a80e4" />
+      <circle cx="14" cy="14" r="2" fill="#1e3a8a" />
     </svg>
   );
 }

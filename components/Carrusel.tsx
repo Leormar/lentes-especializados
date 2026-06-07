@@ -19,7 +19,7 @@ const slides: Slide[] = [
     subtitulo: "La solución cuando los demás han fallado. Adaptamos lentes para queratocono, post-cirugía y ojo seco severo.",
     cta: "Agendar consulta",
     ctaHref: "https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta",
-    bg: "from-[#082f49] to-[#0c4a6e]",
+    bg: "from-[#132660] to-[#1e3a8a]",
   },
   {
     src: "/banners/banner-02.jpg",
@@ -27,7 +27,7 @@ const slides: Slide[] = [
     subtitulo: "Un equipo interdisciplinario de optómetras y oftalmólogos especializados en los casos más complejos de Medellín.",
     cta: "Conocer el equipo",
     ctaHref: "/quienes-somos",
-    bg: "from-[#0c4a6e] to-[#0e6089]",
+    bg: "from-[#1e3a8a] to-[#2d54c2]",
   },
   {
     src: "/banners/banner-03.jpg",
@@ -35,7 +35,7 @@ const slides: Slide[] = [
     subtitulo: "Tecnología de topografía corneal de última generación para diseñar el lente exacto que su córnea necesita.",
     cta: "Ver servicios",
     ctaHref: "/servicios",
-    bg: "from-[#0e6089] to-[#0ea5e9]",
+    bg: "from-[#2d54c2] to-[#4a80e4]",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function Carrusel() {
           href={slide.ctaHref}
           target={slide.ctaHref.startsWith("http") ? "_blank" : undefined}
           rel={slide.ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
-          className="bg-white text-[#0c4a6e] px-7 py-3 rounded-full font-bold text-sm hover:bg-sky-50 transition-colors shadow-lg"
+          className="bg-white text-[#1e3a8a] px-7 py-3 rounded-full font-bold text-sm hover:bg-sky-50 transition-colors shadow-lg"
         >
           {slide.cta}
         </a>

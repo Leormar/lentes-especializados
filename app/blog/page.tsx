@@ -16,7 +16,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white py-16">
+      <section className="bg-gradient-to-br from-[#1e3a8a] to-[#132660] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-sky-300 font-semibold text-sm uppercase tracking-widest mb-4">Educación</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">
@@ -35,7 +35,7 @@ export default function BlogPage() {
               key={c}
               className={`text-sm px-4 py-2 rounded-full font-medium cursor-default transition-colors ${
                 c === "Todos"
-                  ? "bg-[#0c4a6e] text-white"
+                  ? "bg-[#1e3a8a] text-white"
                   : "bg-sky-50 text-slate-600 hover:bg-sky-100"
               }`}
             >
@@ -46,13 +46,13 @@ export default function BlogPage() {
 
         <Link
           href={`/blog/${destacado.slug}`}
-          className="group grid md:grid-cols-2 gap-8 bg-[#f0f9ff] rounded-2xl p-8 border border-sky-100 hover:border-[#0ea5e9] hover:shadow-md transition-all mb-12"
+          className="group grid md:grid-cols-2 gap-8 bg-[#f0f9ff] rounded-2xl p-8 border border-sky-100 hover:border-[#4a80e4] hover:shadow-md transition-all mb-12"
         >
           <div>
-            <span className="inline-block bg-sky-200 text-[#0c4a6e] text-xs font-bold px-3 py-1 rounded-full mb-4">
+            <span className="inline-block bg-sky-200 text-[#1e3a8a] text-xs font-bold px-3 py-1 rounded-full mb-4">
               Artículo destacado · {destacado.categoria}
             </span>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0c4a6e] mb-4 group-hover:text-[#0ea5e9] transition-colors leading-snug">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1e3a8a] mb-4 group-hover:text-[#4a80e4] transition-colors leading-snug">
               {destacado.titulo}
             </h2>
             <p className="text-slate-600 leading-relaxed mb-4">{destacado.resumen}</p>
@@ -74,12 +74,12 @@ export default function BlogPage() {
             <Link
               key={a.slug}
               href={`/blog/${a.slug}`}
-              className="group bg-white rounded-2xl p-6 border border-sky-100 hover:border-[#0ea5e9] hover:shadow-md transition-all flex flex-col"
+              className="group bg-white rounded-2xl p-6 border border-sky-100 hover:border-[#4a80e4] hover:shadow-md transition-all flex flex-col"
             >
-              <span className="inline-block bg-sky-50 text-[#0c4a6e] text-xs font-semibold px-3 py-1 rounded-full mb-4 self-start">
+              <span className="inline-block bg-sky-50 text-[#1e3a8a] text-xs font-semibold px-3 py-1 rounded-full mb-4 self-start">
                 {a.categoria}
               </span>
-              <h3 className="font-bold text-[#0c4a6e] text-lg mb-3 group-hover:text-[#0ea5e9] transition-colors leading-snug flex-1">
+              <h3 className="font-bold text-[#1e3a8a] text-lg mb-3 group-hover:text-[#4a80e4] transition-colors leading-snug flex-1">
                 {a.titulo}
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-4">{a.resumen}</p>
@@ -92,7 +92,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="bg-[#0c4a6e] text-white py-12 text-center">
+      <section className="bg-[#1e3a8a] text-white py-12 text-center">
         <div className="max-w-xl mx-auto px-4">
           <h2 className="text-2xl font-bold mb-3">¿Tiene una pregunta específica?</h2>
           <p className="text-sky-200 mb-6">
@@ -113,7 +113,7 @@ export default function BlogPage() {
 }
 
 function ArticuloIllustration({ categoria }: { categoria: string }) {
-  const color = categoria === "Condiciones" ? "#0ea5e9" : categoria === "Lentes" ? "#38bdf8" : "#0c4a6e";
+  const color = categoria === "Condiciones" ? "#4a80e4" : categoria === "Lentes" ? "#7ba7f0" : "#1e3a8a";
   return (
     <svg viewBox="0 0 200 200" className="w-40 h-40 opacity-80" fill="none">
       <circle cx="100" cy="100" r="90" stroke={color} strokeWidth="2" strokeDasharray="6 4" />

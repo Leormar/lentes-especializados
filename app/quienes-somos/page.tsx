@@ -56,7 +56,7 @@ const valores = [
 export default function QuienesSomosPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white py-16">
+      <section className="bg-gradient-to-br from-[#1e3a8a] to-[#132660] text-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-sky-300 font-semibold text-sm uppercase tracking-widest mb-4">Quiénes somos</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">
@@ -72,8 +72,8 @@ export default function QuienesSomosPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-[#0ea5e9] font-semibold text-sm uppercase tracking-widest mb-3">Nuestra historia</p>
-              <h2 className="text-3xl font-bold text-[#0c4a6e] mb-5">30+ años buscando soluciones</h2>
+              <p className="text-[#4a80e4] font-semibold text-sm uppercase tracking-widest mb-3">Nuestra historia</p>
+              <h2 className="text-3xl font-bold text-[#1e3a8a] mb-5">30+ años buscando soluciones</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
                   Lentes Especializados nació de una convicción: que los pacientes con condiciones visuales complejas merecen un lugar donde el "no hay nada más que hacer" no sea la respuesta.
@@ -94,7 +94,7 @@ export default function QuienesSomosPage() {
                 { num: "+30", label: "Años de experiencia" },
               ].map((s) => (
                 <div key={s.label} className="bg-[#f0f9ff] rounded-2xl p-6 text-center border border-sky-100">
-                  <p className="text-3xl font-black text-[#0c4a6e]">{s.num}</p>
+                  <p className="text-3xl font-black text-[#1e3a8a]">{s.num}</p>
                   <p className="text-sm text-slate-500 mt-1">{s.label}</p>
                 </div>
               ))}
@@ -106,24 +106,24 @@ export default function QuienesSomosPage() {
       <section className="py-16 bg-[#f0f9ff]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <p className="text-[#0ea5e9] font-semibold text-sm uppercase tracking-widest mb-3">El equipo</p>
-            <h2 className="text-3xl font-bold text-[#0c4a6e]">Quiénes le atienden</h2>
+            <p className="text-[#4a80e4] font-semibold text-sm uppercase tracking-widest mb-3">El equipo</p>
+            <h2 className="text-3xl font-bold text-[#1e3a8a]">Quiénes le atienden</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {equipo.map((e) => (
               <div key={e.nombre} className="bg-white rounded-2xl p-7 border border-sky-100 shadow-sm">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#0c4a6e] flex items-center justify-center text-white font-bold text-xl mb-4">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#4a80e4] to-[#1e3a8a] flex items-center justify-center text-white font-bold text-xl mb-4">
                   {e.nombre.split(" ")[1][0]}
                 </div>
-                <h3 className="font-bold text-[#0c4a6e] text-xl">{e.nombre}</h3>
-                <p className="text-[#0ea5e9] text-sm font-semibold mb-3">{e.titulo}</p>
+                <h3 className="font-bold text-[#1e3a8a] text-xl">{e.nombre}</h3>
+                <p className="text-[#4a80e4] text-sm font-semibold mb-3">{e.titulo}</p>
                 <p className="text-slate-600 text-sm leading-relaxed mb-4">{e.bio}</p>
                 <div>
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Áreas de enfoque</p>
                   <ul className="space-y-1">
                     {e.especialidades.map((esp) => (
                       <li key={esp} className="flex items-center gap-2 text-sm text-slate-600">
-                        <span className="text-[#0ea5e9] shrink-0">·</span>
+                        <span className="text-[#4a80e4] shrink-0">·</span>
                         {esp}
                       </li>
                     ))}
@@ -138,17 +138,17 @@ export default function QuienesSomosPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <p className="text-[#0ea5e9] font-semibold text-sm uppercase tracking-widest mb-3">Lo que nos diferencia</p>
-            <h2 className="text-3xl font-bold text-[#0c4a6e]">Nuestra forma de trabajar</h2>
+            <p className="text-[#4a80e4] font-semibold text-sm uppercase tracking-widest mb-3">Lo que nos diferencia</p>
+            <h2 className="text-3xl font-bold text-[#1e3a8a]">Nuestra forma de trabajar</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {valores.map((v) => (
               <div key={v.titulo} className="flex gap-4 p-6 bg-[#f0f9ff] rounded-2xl border border-sky-100">
-                <div className="w-10 h-10 rounded-xl bg-[#0c4a6e] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-xl bg-[#1e3a8a] flex items-center justify-center shrink-0 mt-0.5">
                   <span className="text-white text-lg">✓</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#0c4a6e] mb-1">{v.titulo}</h3>
+                  <h3 className="font-bold text-[#1e3a8a] mb-1">{v.titulo}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#0c4a6e] text-white text-center">
+      <section className="py-16 bg-[#1e3a8a] text-white text-center">
         <div className="max-w-xl mx-auto px-4">
           <h2 className="text-2xl font-bold mb-4">¿Quiere conocernos?</h2>
           <p className="text-sky-200 mb-6">La primera consulta es el primer paso. Aria puede ayudarle a agendar ahora mismo.</p>
