@@ -1,0 +1,103 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+
+const links = [
+  { href: "/servicios", label: "Servicios" },
+  { href: "/blog", label: "Educación" },
+  { href: "/quienes-somos", label: "Quiénes somos" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-sky-100">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2.5 font-semibold text-[#0c4a6e]">
+          <EyeIcon />
+          <span className="text-lg tracking-tight">Lentes Especializados</span>
+        </Link>
+
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-sm text-slate-600 hover:text-[#0c4a6e] font-medium transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <a
+            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20una%20consulta%20sobre%20lentes%20especializados"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm bg-[#0c4a6e] text-white px-4 py-2 rounded-full font-medium hover:bg-[#082f49] transition-colors"
+          >
+            Agendar cita
+          </a>
+        </div>
+
+        <button
+          className="md:hidden p-2 text-slate-600"
+          onClick={() => setOpen(!open)}
+          aria-label="Menú"
+        >
+          {open ? <XIcon /> : <MenuIcon />}
+        </button>
+      </nav>
+
+      {open && (
+        <div className="md:hidden border-t border-sky-100 bg-white px-4 pb-4">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="block py-3 text-slate-700 font-medium border-b border-slate-100 last:border-0"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <a
+            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20una%20consulta%20sobre%20lentes%20especializados"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 block text-center bg-[#0c4a6e] text-white px-4 py-3 rounded-full font-medium"
+          >
+            Agendar cita por WhatsApp
+          </a>
+        </div>
+      )}
+    </header>
+  );
+}
+
+function EyeIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <ellipse cx="14" cy="14" rx="12" ry="8" stroke="#0c4a6e" strokeWidth="2" />
+      <circle cx="14" cy="14" r="4" fill="#0ea5e9" />
+      <circle cx="14" cy="14" r="2" fill="#0c4a6e" />
+    </svg>
+  );
+}
+
+function MenuIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <path d="M5 5l12 12M17 5L5 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
