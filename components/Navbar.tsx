@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         glass
-          ? "bg-white/70 backdrop-blur-md border-b border-white/40"
-          : "bg-white/98 backdrop-blur border-b border-sky-100 shadow-sm"
+          ? "bg-white/45 backdrop-blur-md border-b-2 border-[#d7c874]/70"
+          : "bg-white/98 backdrop-blur border-b-2 border-[#d7c874] shadow-sm"
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-28 flex items-center justify-between">
@@ -232,13 +232,18 @@ export default function Navbar() {
           box-shadow: 0 8px 24px rgba(46,63,138,0.45), inset 0 1px 0 rgba(255,255,255,0.2);
         }
 
-        /* Shine sweep */
+        /* Shine sweep — gold */
         .shine-bar {
           position: absolute; top: -50%; left: -80%;
-          width: 40%; height: 200%;
-          background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+          width: 48%; height: 200%;
+          background: linear-gradient(105deg,
+            transparent 20%,
+            rgba(215,200,116,0.5) 44%,
+            rgba(255,245,160,0.7) 55%,
+            transparent 78%
+          );
           transform: skewX(-20deg);
-          animation: shine-sweep 2.8s ease infinite;
+          animation: shine-sweep 2.4s ease infinite;
           pointer-events: none;
         }
 

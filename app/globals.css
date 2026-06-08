@@ -47,16 +47,17 @@ body {
   position: absolute;
   top: -60%;
   left: -90%;
-  width: 45%;
+  width: 50%;
   height: 220%;
   background: linear-gradient(
     108deg,
-    transparent 25%,
-    rgba(255, 255, 255, 0.38) 50%,
-    transparent 75%
+    transparent 20%,
+    rgba(215, 200, 116, 0.55) 45%,
+    rgba(255, 245, 160, 0.7) 55%,
+    transparent 80%
   );
   transform: skewX(-22deg);
-  animation: shine-global 2.6s ease infinite;
+  animation: shine-global 2.2s ease infinite;
   pointer-events: none;
 }
 .btn-shine:hover {
