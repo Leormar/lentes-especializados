@@ -3,23 +3,25 @@
 import { useState } from "react";
 import Link from "next/link";
 
-type Tab = { id: string; label: string; icon: string };
+type Tab = { id: string; label: string; icon: string; desc: string };
 
 const tabs: Tab[] = [
-  { id: "servicios", label: "Servicios", icon: "👁" },
-  { id: "equipo",    label: "Equipo",    icon: "🩺" },
-  { id: "nosotros",  label: "Nosotros",  icon: "🏆" },
-  { id: "educacion", label: "Educación", icon: "📖" },
+  { id: "servicios", label: "Servicios",  icon: "👁",  desc: "Lentes especializados" },
+  { id: "equipo",    label: "Equipo",     icon: "🩺",  desc: "Nuestros especialistas" },
+  { id: "nosotros",  label: "Nosotros",   icon: "🏆",  desc: "Historia y valores" },
+  { id: "educacion", label: "Educación",  icon: "📖",  desc: "Artículos clínicos" },
 ];
 
 export default function TabsInfo() {
   const [activo, setActivo] = useState("servicios");
-  const [key, setKey] = useState(0);
+  const [contentKey, setContentKey] = useState(0);
+  const [btnKeys, setBtnKeys] = useState<Record<string, number>>({ servicios: 0, equipo: 0, nosotros: 0, educacion: 0 });
 
   const cambiar = (id: string) => {
     if (id === activo) return;
     setActivo(id);
-    setKey((k) => k + 1);
+    setContentKey((k) => k + 1);
+    setBtnKeys((prev) => ({ ...prev, [id]: prev[id] + 1 }));
   };
 
   return (
@@ -35,27 +37,34 @@ export default function TabsInfo() {
           <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full mt-4" />
         </div>
 
-        {/* Pestañas */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {tabs.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => cambiar(t.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
-                activo === t.id
-                  ? "bg-[#2e3f8a] text-white shadow-lg scale-105"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-              }`}
-            >
-              <span>{t.icon}</span>
-              {t.label}
-            </button>
-          ))}
+        {/* Botones grandes con efecto aladino propio */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {tabs.map((t) => {
+            const esActivo = activo === t.id;
+            return (
+              <button
+                key={`${t.id}-${btnKeys[t.id]}`}
+                onClick={() => cambiar(t.id)}
+                style={esActivo ? { animation: "aladino-btn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both" } : undefined}
+                className={`flex flex-col items-center justify-center gap-3 rounded-2xl py-8 px-4 font-semibold transition-all duration-300 shadow-sm border-2 ${
+                  esActivo
+                    ? "bg-[#2e3f8a] text-white border-[#2e3f8a] shadow-xl"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-[#5b80d4] hover:shadow-md hover:text-[#2e3f8a]"
+                }`}
+              >
+                <span className={`text-4xl transition-transform duration-300 ${esActivo ? "scale-125" : "scale-100"}`}>
+                  {t.icon}
+                </span>
+                <span className="text-base font-bold">{t.label}</span>
+                <span className={`text-xs font-normal ${esActivo ? "text-blue-200" : "text-slate-400"}`}>{t.desc}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Contenido con efecto Aladino */}
         <div
-          key={key}
+          key={contentKey}
           style={{ animation: "aladino 0.55s cubic-bezier(0.22, 1, 0.36, 1) both" }}
         >
           {activo === "servicios" && <TabServicios />}
@@ -71,6 +80,12 @@ export default function TabsInfo() {
           55%  { transform: translateY(-8px) scale(1.01) rotate(0.3deg); }
           75%  { transform: translateY(3px) scale(0.99); }
           100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+        }
+        @keyframes aladino-btn {
+          0%   { opacity: 0.6; transform: scale(0.88) rotate(-2deg); }
+          50%  { transform: scale(1.08) rotate(1deg); }
+          75%  { transform: scale(0.97) rotate(-0.5deg); }
+          100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
       `}</style>
     </section>

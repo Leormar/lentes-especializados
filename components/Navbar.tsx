@@ -17,15 +17,15 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-sky-100 shadow-sm">
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-24 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-32 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
           {!logoError ? (
             <Image
               src="/logo.png"
               alt="Lentes Especializados"
-              width={280}
-              height={84}
-              className="h-20 w-auto object-contain"
+              width={380}
+              height={114}
+              className="h-28 w-auto object-contain"
               onError={() => setLogoError(true)}
               priority
             />
