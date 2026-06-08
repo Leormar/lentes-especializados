@@ -81,6 +81,28 @@ Los lentes esclerales en ojo seco actúan como una cámara de humedad permanente
     nota: "Incluye evaluación completa de superficie ocular con imágenes MediView.",
   },
   {
+    id: "mediview",
+    titulo: "Imágenes MediView · Diagnóstico de Ojo Seco",
+    subtitulo: "Valoración diagnóstica avanzada de superficie ocular y ojo seco",
+    descripcion: `MediView es nuestra plataforma de imagen ocular de última generación que permite evaluar con precisión el estado de la superficie ocular, las glándulas de Meibomio y la película lagrimal. Es indispensable para el diagnóstico diferencial del ojo seco, la planificación de la adaptación de lentes de contacto especializados y el seguimiento del tratamiento.
+
+Los exámenes MediView incluyen: meibografía (imagen infrarroja de las glándulas de Meibomio), interferometría de la capa lipídica de la lágrima, evaluación del NIBUT (tiempo de ruptura no invasiva), clasificación del grado de blefaritis y disfunción glandular, y mapa de tinción corneal y conjuntival.
+
+Este servicio es ofrecido tanto por el área de optometría especializada para la adaptación de lentes de contacto en ojo seco, como por el área de oftalmología de superficie ocular para el diagnóstico y manejo del ojo seco severo.`,
+    indicaciones: [
+      "Ojo seco sintomático sin diagnóstico preciso",
+      "Disfunción de glándula de Meibomio (DGM)",
+      "Blefaritis crónica posterior",
+      "Evaluación previa a adaptación de lentes esclerales",
+      "Seguimiento de tratamiento de ojo seco severo",
+      "Valoración por oftalmología de superficie ocular",
+      "Síndrome de Sjögren y otras enfermedades autoinmunes",
+      "Post-LASIK con ojo seco persistente",
+    ],
+    precio: "COP 180.000 – 280.000",
+    nota: "El costo varía según el número de exámenes requeridos. Incluye informe detallado con imágenes.",
+  },
+  {
     id: "baja-vision",
     titulo: "Baja Visión",
     subtitulo: "Maximizando el potencial visual restante",
@@ -115,7 +137,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      <nav className="bg-white sticky top-16 z-40 border-b border-sky-100 shadow-sm">
+      <nav className="bg-white sticky top-28 z-40 border-b border-sky-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex gap-6 overflow-x-auto py-3 text-sm scrollbar-hide">
             {servicios.map((s) => (
