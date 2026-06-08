@@ -14,7 +14,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/banners/banner-01.jpg",
+    src: "/banners/banner-principal.jpg",
     titulo: "Lentes Esclerales para Córneas Irregulares",
     subtitulo: "La solución cuando los demás han fallado. Adaptamos lentes para queratocono, post-cirugía y ojo seco severo.",
     cta: "Agendar consulta",
