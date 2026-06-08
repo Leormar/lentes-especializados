@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         glass
-          ? "bg-[#1a2a5e]/60 backdrop-blur-md border-b border-white/10"
-          : "bg-white/97 backdrop-blur border-b border-sky-100 shadow-sm"
+          ? "bg-white/70 backdrop-blur-md border-b border-white/40"
+          : "bg-white/98 backdrop-blur border-b border-sky-100 shadow-sm"
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-28 flex items-center justify-between">
@@ -44,7 +44,7 @@ export default function Navbar() {
               width={380}
               height={114}
               className="h-24 w-auto object-contain transition-all duration-500"
-              style={glass ? { filter: "brightness(0) invert(1)" } : {}}
+              style={{}}
               onError={() => setLogoError(true)}
               priority
             />
@@ -62,7 +62,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`nav-link ${glass ? "glass-link" : "solid-link"}`}
+              className="nav-link solid-link"
               style={{ animationDelay: `${i * 0.08}s` }}
             >
               {l.label}
@@ -73,7 +73,7 @@ export default function Navbar() {
             href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta"
             target="_blank"
             rel="noopener noreferrer"
-            className={`cta-btn ${glass ? "cta-glass" : "cta-solid"}`}
+            className="cta-btn cta-solid"
             style={{ animationDelay: "0.36s" }}
           >
             <span className="shine-bar" aria-hidden="true" />
@@ -83,7 +83,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className={`md:hidden p-2 transition-colors ${glass ? "text-white" : "text-slate-600 hover:text-[#2e3f8a]"}`}
+          className="md:hidden p-2 transition-colors text-[#2e3f8a] hover:text-[#5b80d4]"
           onClick={() => setOpen(!open)}
           aria-label="Menú"
         >

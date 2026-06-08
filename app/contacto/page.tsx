@@ -104,7 +104,7 @@ export default function ContactoPage() {
               href="https://wa.me/573113154316?text=Hola,%20Aria.%20Me%20gustaría%20agendar%20una%20consulta."
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block bg-[#25D366] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b858] transition-colors"
+              className="btn-shine mt-4 inline-block bg-[#25D366] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b858] transition-colors"
             >
               Abrir WhatsApp con Aria
             </a>

@@ -19,3 +19,50 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
+
+/* ══ Botones globales con shine + efecto aladino ══════════════════ */
+
+@keyframes aladino-btn {
+  0%   { opacity: 0.7; transform: scale(0.88) rotate(-2deg) translateY(6px); }
+  50%  { transform: scale(1.07) rotate(1.2deg) translateY(-4px); }
+  75%  { transform: scale(0.97) rotate(-0.4deg) translateY(1px); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg) translateY(0); }
+}
+
+@keyframes shine-global {
+  0%   { left: -90%; }
+  45%  { left: 130%; }
+  100% { left: 130%; }
+}
+
+/* Clase utilitaria: .btn-shine  → aplica a cualquier <a> o <button> */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -90%;
+  width: 45%;
+  height: 220%;
+  background: linear-gradient(
+    108deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.38) 50%,
+    transparent 75%
+  );
+  transform: skewX(-22deg);
+  animation: shine-global 2.6s ease infinite;
+  pointer-events: none;
+}
+.btn-shine:hover {
+  transform: translateY(-4px) scale(1.05);
+  animation: aladino-btn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.btn-shine:active {
+  transform: translateY(0) scale(0.97);
+}

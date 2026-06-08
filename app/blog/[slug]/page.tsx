@@ -70,7 +70,7 @@ export default async function ArticuloPage({ params }: Props) {
             href={`https://wa.me/573113154316?text=Hola,%20leí%20el%20artículo%20sobre%20${encodeURIComponent(articulo.titulo)}%20y%20me%20gustaría%20agendar%20una%20consulta`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"
+            className="btn-shine inline-block bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"
           >
             Agendar consulta por WhatsApp
           </a>

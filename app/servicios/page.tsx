@@ -194,7 +194,7 @@ export default function ServiciosPage() {
                     href={`https://wa.me/573113154316?text=Hola,%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(s.titulo)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 block text-center bg-[#25D366] text-white px-4 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b858] transition-colors"
+                    className="btn-shine mt-4 block text-center bg-[#25D366] text-white px-4 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b858] transition-colors"
                   >
                     Agendar consulta
                   </a>
@@ -214,14 +214,14 @@ export default function ServiciosPage() {
           <h2 className="text-2xl font-bold text-[#2e3f8a] mb-4">¿No sabe cuál servicio necesita?</h2>
           <p className="text-slate-600 mb-6">Use nuestro orientador interactivo o hable directamente con Aria, nuestra asistente virtual.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#selector" className="border-2 border-[#2e3f8a] text-[#2e3f8a] px-6 py-3 rounded-full font-semibold hover:bg-[#2e3f8a] hover:text-white transition-colors">
+            <Link href="/#selector" className="btn-shine border-2 border-[#2e3f8a] text-[#2e3f8a] px-6 py-3 rounded-full font-semibold hover:bg-[#2e3f8a] hover:text-white transition-colors">
               Usar el orientador
             </Link>
             <a
               href="https://wa.me/573113154316"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"
+              className="btn-shine bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"
             >
               Hablar con Aria
             </a>

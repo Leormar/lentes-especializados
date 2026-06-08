@@ -166,7 +166,7 @@ export default function QuienesSomosPage() {
               href="https://wa.me/573113154316"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"
+              className="btn-shine bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"
             >
               Agendar por WhatsApp
             </a>
