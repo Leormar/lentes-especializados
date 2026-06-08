@@ -30,11 +30,11 @@ const slides: Slide[] = [
     bg: "from-[#2e3f8a] to-[#3a5cc2]",
   },
   {
-    src: "/banners/banner-03.jpg",
+    src: "/banners/imagenesmediview.JPG",
     titulo: "Imágenes MediView · Diagnóstico de Ojo Seco",
     subtitulo: "Tecnología de imagen corneal de última generación para diagnóstico preciso de ojo seco y superficie ocular.",
     cta: "Ver servicios",
-    ctaHref: "/servicios",
+    ctaHref: "/servicios#mediview",
     bg: "from-[#3a5cc2] to-[#5b80d4]",
   },
 ];
