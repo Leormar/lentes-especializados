@@ -30,7 +30,7 @@ export default async function ArticuloPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-[#1e3a8a] to-[#132660] text-white py-14">
+      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-2 text-sky-300 text-sm mb-6">
             <Link href="/blog" className="hover:text-white transition-colors">Educación</Link>
@@ -53,17 +53,17 @@ export default async function ArticuloPage({ params }: Props) {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
         <div
           className="prose prose-lg prose-slate max-w-none
-            prose-headings:text-[#1e3a8a] prose-headings:font-bold
+            prose-headings:text-[#2e3f8a] prose-headings:font-bold
             prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
             prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
             prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-4
             prose-li:text-slate-600 prose-li:leading-relaxed
-            prose-strong:text-[#1e3a8a]
+            prose-strong:text-[#2e3f8a]
             prose-ul:my-4 prose-ul:space-y-1"
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <div className="mt-12 bg-[#1e3a8a] text-white rounded-2xl p-6 text-center">
+        <div className="mt-12 bg-[#2e3f8a] text-white rounded-2xl p-6 text-center">
           <p className="font-bold text-lg mb-2">¿Tiene esta condición o conoce a alguien que la tenga?</p>
           <p className="text-sky-200 text-sm mb-4">Una consulta puede cambiar completamente su experiencia visual.</p>
           <a
@@ -80,18 +80,18 @@ export default async function ArticuloPage({ params }: Props) {
       {otros.length > 0 && (
         <section className="bg-[#f0f9ff] py-12">
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <h2 className="text-xl font-bold text-[#1e3a8a] mb-6">Más artículos</h2>
+            <h2 className="text-xl font-bold text-[#2e3f8a] mb-6">Más artículos</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {otros.map((a) => (
                 <Link
                   key={a.slug}
                   href={`/blog/${a.slug}`}
-                  className="group bg-white rounded-2xl p-5 border border-sky-100 hover:border-[#4a80e4] hover:shadow-md transition-all"
+                  className="group bg-white rounded-2xl p-5 border border-sky-100 hover:border-[#5b80d4] hover:shadow-md transition-all"
                 >
-                  <span className="inline-block bg-sky-50 text-[#1e3a8a] text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                  <span className="inline-block bg-sky-50 text-[#2e3f8a] text-xs font-semibold px-3 py-1 rounded-full mb-3">
                     {a.categoria}
                   </span>
-                  <h3 className="font-bold text-[#1e3a8a] text-base group-hover:text-[#4a80e4] transition-colors leading-snug">
+                  <h3 className="font-bold text-[#2e3f8a] text-base group-hover:text-[#5b80d4] transition-colors leading-snug">
                     {a.titulo}
                   </h3>
                   <p className="text-xs text-slate-400 mt-2">{a.tiempo} de lectura</p>

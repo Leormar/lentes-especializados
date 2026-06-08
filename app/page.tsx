@@ -20,10 +20,10 @@ function EquipoSection() {
     <section className="py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2e3f8a] mb-4">
             Contamos con un excelente equipo de trabajo
           </h2>
-          <div className="w-16 h-1 bg-[#4a80e4] mx-auto mb-6 rounded-full" />
+          <div className="w-16 h-1 bg-[#5b80d4] mx-auto mb-6 rounded-full" />
           <p className="text-slate-600 leading-relaxed max-w-3xl mx-auto text-lg">
             Con más de 30 años de experiencia, somos el centro de referencia en contactología especializada de Medellín. Nuestro equipo interdisciplinario de optómetras y oftalmólogos atiende los casos más complejos: queratocono, córneas irregulares, ojo seco severo y adaptaciones post-quirúrgicas.
           </p>
@@ -31,7 +31,7 @@ function EquipoSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
           <div className="space-y-3">
-            <p className="font-semibold text-[#1e3a8a] text-lg mb-4">Nuestras especialidades:</p>
+            <p className="font-semibold text-[#2e3f8a] text-lg mb-4">Nuestras especialidades:</p>
             {[
               "Adaptación de lentes esclerales y RGP",
               "Manejo de queratocono y ectasias corneales",
@@ -43,14 +43,14 @@ function EquipoSection() {
               "Baja visión",
             ].map((esp) => (
               <div key={esp} className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#4a80e4] shrink-0" />
+                <span className="w-2 h-2 rounded-full bg-[#5b80d4] shrink-0" />
                 <span className="text-slate-700">{esp}</span>
               </div>
             ))}
           </div>
 
           <div className="bg-[#f0f9ff] rounded-2xl p-8 border border-sky-100 flex flex-col justify-center">
-            <p className="text-[#4a80e4] font-semibold text-sm uppercase tracking-widest mb-4">El equipo</p>
+            <p className="text-[#5b80d4] font-semibold text-sm uppercase tracking-widest mb-4">El equipo</p>
             {[
               { nombre: "Dr. Leonardo Orjuela Mariño", rol: "OD · Director Científico · Contactología, Baja Visión, Prótesis" },
               { nombre: "Dra. Elizabeth Rueda", rol: "OD · Optometría Pediátrica · Bebés Canguro" },
@@ -58,13 +58,13 @@ function EquipoSection() {
               { nombre: "Dra. Laura Silva", rol: "MD · Oftalmología · Superficie Ocular" },
             ].map((p) => (
               <div key={p.nombre} className="py-3 border-b border-sky-100 last:border-0">
-                <p className="font-semibold text-[#1e3a8a] text-sm">{p.nombre}</p>
+                <p className="font-semibold text-[#2e3f8a] text-sm">{p.nombre}</p>
                 <p className="text-slate-500 text-xs mt-0.5">{p.rol}</p>
               </div>
             ))}
             <Link
               href="/quienes-somos"
-              className="mt-5 text-center border-2 border-[#1e3a8a] text-[#1e3a8a] px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#1e3a8a] hover:text-white transition-colors"
+              className="mt-5 text-center border-2 border-[#2e3f8a] text-[#2e3f8a] px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#2e3f8a] hover:text-white transition-colors"
             >
               Conocer al equipo completo
             </Link>
@@ -80,8 +80,8 @@ function ValoresSection() {
     {
       icono: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="18" stroke="#4a80e4" strokeWidth="2" />
-          <path d="M12 20l6 6 10-12" stroke="#1e3a8a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="20" cy="20" r="18" stroke="#5b80d4" strokeWidth="2" />
+          <path d="M12 20l6 6 10-12" stroke="#2e3f8a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       titulo: "Calidad",
@@ -90,8 +90,8 @@ function ValoresSection() {
     {
       icono: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="18" stroke="#4a80e4" strokeWidth="2" />
-          <path d="M20 10v10l6 4" stroke="#1e3a8a" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="20" cy="20" r="18" stroke="#5b80d4" strokeWidth="2" />
+          <path d="M20 10v10l6 4" stroke="#2e3f8a" strokeWidth="2.5" strokeLinecap="round" />
         </svg>
       ),
       titulo: "Experiencia",
@@ -100,9 +100,9 @@ function ValoresSection() {
     {
       icono: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="18" stroke="#4a80e4" strokeWidth="2" />
-          <path d="M14 26c0-4 3-8 6-10M26 14c-1.5 4-4 7-6 9" stroke="#1e3a8a" strokeWidth="2.5" strokeLinecap="round" />
-          <circle cx="20" cy="20" r="3" fill="#4a80e4" />
+          <circle cx="20" cy="20" r="18" stroke="#5b80d4" strokeWidth="2" />
+          <path d="M14 26c0-4 3-8 6-10M26 14c-1.5 4-4 7-6 9" stroke="#2e3f8a" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="20" cy="20" r="3" fill="#5b80d4" />
         </svg>
       ),
       titulo: "Innovación",
@@ -117,10 +117,10 @@ function ValoresSection() {
           {valores.map((v) => (
             <div
               key={v.titulo}
-              className="bg-white rounded-2xl p-8 text-center border border-sky-100 shadow-sm hover:shadow-md hover:border-[#4a80e4] transition-all"
+              className="bg-white rounded-2xl p-8 text-center border border-sky-100 shadow-sm hover:shadow-md hover:border-[#5b80d4] transition-all"
             >
               <div className="flex justify-center mb-5">{v.icono}</div>
-              <h3 className="text-xl font-bold text-[#1e3a8a] mb-3">{v.titulo}</h3>
+              <h3 className="text-xl font-bold text-[#2e3f8a] mb-3">{v.titulo}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
             </div>
           ))}
@@ -144,23 +144,23 @@ function ServiciosSection() {
     <section className="py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#1e3a8a] mb-3">Nuestros Servicios</h2>
-          <div className="w-16 h-1 bg-[#4a80e4] mx-auto rounded-full" />
+          <h2 className="text-3xl font-bold text-[#2e3f8a] mb-3">Nuestros Servicios</h2>
+          <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full" />
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {servicios.map((s) => (
             <Link
               key={s.titulo}
               href={s.href}
-              className="group bg-[#f0f9ff] border border-sky-100 rounded-xl p-6 hover:border-[#4a80e4] hover:bg-white hover:shadow-md transition-all"
+              className="group bg-[#f0f9ff] border border-sky-100 rounded-xl p-6 hover:border-[#5b80d4] hover:bg-white hover:shadow-md transition-all"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#1e3a8a] flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-lg bg-[#2e3f8a] flex items-center justify-center mb-4">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <ellipse cx="9" cy="9" rx="7.5" ry="5" stroke="white" strokeWidth="1.5" />
                   <circle cx="9" cy="9" r="2.5" fill="white" />
                 </svg>
               </div>
-              <h3 className="font-bold text-[#1e3a8a] mb-2 group-hover:text-[#4a80e4] transition-colors">{s.titulo}</h3>
+              <h3 className="font-bold text-[#2e3f8a] mb-2 group-hover:text-[#5b80d4] transition-colors">{s.titulo}</h3>
               <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
             </Link>
           ))}
@@ -168,7 +168,7 @@ function ServiciosSection() {
         <div className="text-center mt-8">
           <Link
             href="/servicios"
-            className="inline-block bg-[#1e3a8a] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#132660] transition-colors"
+            className="inline-block bg-[#2e3f8a] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#1a2a5e] transition-colors"
           >
             Ver todos los servicios
           </Link>
@@ -183,8 +183,8 @@ function SelectorSection() {
     <section className="py-16 bg-[#f0f9ff]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#1e3a8a] mb-3">¿No sabe qué lente necesita?</h2>
-          <div className="w-16 h-1 bg-[#4a80e4] mx-auto rounded-full mb-4" />
+          <h2 className="text-3xl font-bold text-[#2e3f8a] mb-3">¿No sabe qué lente necesita?</h2>
+          <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full mb-4" />
           <p className="text-slate-600 leading-relaxed">
             Responda 3 preguntas y le indicamos qué tipo de lente especializado se adapta mejor a su caso.
           </p>
@@ -200,8 +200,8 @@ function SolicitarCitaSection() {
     <section className="py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#1e3a8a] mb-3">Solicitar Cita</h2>
-          <div className="w-16 h-1 bg-[#4a80e4] mx-auto rounded-full mb-4" />
+          <h2 className="text-3xl font-bold text-[#2e3f8a] mb-3">Solicitar Cita</h2>
+          <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full mb-4" />
           <p className="text-slate-600">La forma más rápida de agendar es por WhatsApp. También puede dejarnos sus datos y le contactamos.</p>
         </div>
 
@@ -226,18 +226,18 @@ function SolicitarCitaSection() {
             </a>
 
             <div className="bg-[#f0f9ff] rounded-2xl p-6 border border-sky-100 space-y-4">
-              <p className="font-semibold text-[#1e3a8a]">Información de contacto</p>
+              <p className="font-semibold text-[#2e3f8a]">Información de contacto</p>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3 text-slate-600">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a80e4" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b80d4" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Torre Médica Ciudad del Río, Medellín
                 </div>
                 <div className="flex items-center gap-3 text-slate-600">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a80e4" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b80d4" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                   Lunes a viernes: 7:30 am – 5:30 pm
                 </div>
                 <div className="flex items-center gap-3 text-slate-600">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4a80e4" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5b80d4" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                   info@lentesespecializados.com
                 </div>
               </div>
@@ -251,7 +251,7 @@ function SolicitarCitaSection() {
                 type="text"
                 required
                 maxLength={100}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#4a80e4] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all"
                 placeholder="Su nombre"
               />
             </div>
@@ -260,7 +260,7 @@ function SolicitarCitaSection() {
               <input
                 type="text"
                 maxLength={20}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#4a80e4] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all"
                 placeholder="Número de documento"
               />
             </div>
@@ -270,7 +270,7 @@ function SolicitarCitaSection() {
                 type="email"
                 required
                 maxLength={100}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#4a80e4] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all"
                 placeholder="su@correo.com"
               />
             </div>
@@ -280,13 +280,13 @@ function SolicitarCitaSection() {
                 type="tel"
                 required
                 maxLength={15}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#4a80e4] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all"
                 placeholder="+57 300 000 0000"
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Motivo de consulta</label>
-              <select className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#4a80e4] focus:border-transparent transition-all">
+              <select className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all">
                 <option value="">Seleccione...</option>
                 <option>Queratocono</option>
                 <option>Post-LASIK / Post-cirugía</option>
@@ -300,7 +300,7 @@ function SolicitarCitaSection() {
             </div>
             <button
               type="submit"
-              className="w-full bg-[#1e3a8a] text-white py-3.5 rounded-xl font-semibold hover:bg-[#132660] transition-colors"
+              className="w-full bg-[#2e3f8a] text-white py-3.5 rounded-xl font-semibold hover:bg-[#1a2a5e] transition-colors"
             >
               Enviar solicitud
             </button>

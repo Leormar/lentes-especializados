@@ -103,7 +103,7 @@ Trabajamos con pacientes de todas las edades: desde niños con ambliopía refrac
 export default function ServiciosPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-[#1e3a8a] to-[#132660] text-white py-16 md:py-20">
+      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-sky-300 font-semibold text-sm uppercase tracking-widest mb-4">Servicios</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">
@@ -122,7 +122,7 @@ export default function ServiciosPage() {
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="text-slate-600 hover:text-[#1e3a8a] font-medium whitespace-nowrap transition-colors"
+                className="text-slate-600 hover:text-[#2e3f8a] font-medium whitespace-nowrap transition-colors"
               >
                 {s.titulo}
               </a>
@@ -139,8 +139,8 @@ export default function ServiciosPage() {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#1e3a8a]">{s.titulo}</h2>
-                <p className="text-[#4a80e4] font-medium">{s.subtitulo}</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#2e3f8a]">{s.titulo}</h2>
+                <p className="text-[#5b80d4] font-medium">{s.subtitulo}</p>
               </div>
             </div>
 
@@ -153,18 +153,18 @@ export default function ServiciosPage() {
 
               <div className="space-y-6">
                 <div className="bg-[#f0f9ff] rounded-2xl p-5 border border-sky-100">
-                  <p className="text-xs font-semibold text-[#4a80e4] uppercase tracking-wide mb-3">Indicaciones</p>
+                  <p className="text-xs font-semibold text-[#5b80d4] uppercase tracking-wide mb-3">Indicaciones</p>
                   <ul className="space-y-2">
                     {s.indicaciones.map((ind) => (
                       <li key={ind} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-[#4a80e4] mt-0.5 shrink-0">✓</span>
+                        <span className="text-[#5b80d4] mt-0.5 shrink-0">✓</span>
                         {ind}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="bg-[#1e3a8a] text-white rounded-2xl p-5">
+                <div className="bg-[#2e3f8a] text-white rounded-2xl p-5">
                   <p className="text-xs font-semibold text-sky-300 uppercase tracking-wide mb-1">Inversión aproximada</p>
                   <p className="font-bold text-lg mb-1">{s.precio}</p>
                   <p className="text-sky-200 text-xs leading-relaxed">{s.nota}</p>
@@ -189,10 +189,10 @@ export default function ServiciosPage() {
 
       <section className="bg-[#f0f9ff] py-16 text-center">
         <div className="max-w-xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-[#1e3a8a] mb-4">¿No sabe cuál servicio necesita?</h2>
+          <h2 className="text-2xl font-bold text-[#2e3f8a] mb-4">¿No sabe cuál servicio necesita?</h2>
           <p className="text-slate-600 mb-6">Use nuestro orientador interactivo o hable directamente con Aria, nuestra asistente virtual.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/#selector" className="border-2 border-[#1e3a8a] text-[#1e3a8a] px-6 py-3 rounded-full font-semibold hover:bg-[#1e3a8a] hover:text-white transition-colors">
+            <Link href="/#selector" className="border-2 border-[#2e3f8a] text-[#2e3f8a] px-6 py-3 rounded-full font-semibold hover:bg-[#2e3f8a] hover:text-white transition-colors">
               Usar el orientador
             </Link>
             <a
