@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         glass
-          ? "bg-white/45 backdrop-blur-md border-b-2 border-[#d7c874]/70"
-          : "bg-white/98 backdrop-blur border-b-2 border-[#d7c874] shadow-sm"
+          ? "bg-white/45 backdrop-blur-md"
+          : "bg-white/98 backdrop-blur shadow-md"
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-28 flex items-center justify-between">

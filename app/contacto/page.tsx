@@ -15,7 +15,7 @@ const horarios = [
 export default function ContactoPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white py-16">
+      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white pt-36 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-sky-300 font-semibold text-sm uppercase tracking-widest mb-4">Contacto</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">Agende su consulta</h1>

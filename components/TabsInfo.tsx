@@ -31,9 +31,9 @@ const tabs: Tab[] = [
   },
   {
     id: "equipo",
-    label: "Equipo",
+    label: "Profesionales",
     icon: "🩺",
-    desc: "Nuestros especialistas",
+    desc: "Toda la experiencia",
     gradient: "linear-gradient(135deg,#0f766e 0%,#0d9488 60%,#134e4a 100%)",
     gradientSoft: "linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 100%)",
     glow: "0 8px 32px rgba(13,148,136,0.45), 0 2px 8px rgba(15,118,110,0.3)",
@@ -108,9 +108,9 @@ export default function TabsInfo() {
                 style={
                   esActivo
                     ? {
-                        background: t.gradient,
-                        borderColor: "transparent",
-                        boxShadow: t.glow,
+                        background: "linear-gradient(135deg,#3b5ec6 0%,#2e3f8a 60%,#1a2a5e 100%)",
+                        borderColor: "#d7c874",
+                        boxShadow: "0 8px 32px rgba(46,63,138,0.45), 0 0 0 2px #d7c874",
                         animation: `aladino-tab 0.65s cubic-bezier(0.22,1,0.36,1) both`,
                       }
                     : {
@@ -237,19 +237,23 @@ function TabEquipo() {
     { nombre: "Dra. Laura Silva",             cargo: "MD · Oftalmóloga",             areas: "Superficie ocular · Ojo seco · Diagnóstico MediView", inicial: "S", color: "from-[#b45309] to-[#d97706]" },
   ];
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {equipo.map((e) => (
-        <div key={e.nombre} className="flex gap-4 bg-[#f0fdfa] border border-teal-100 rounded-2xl p-5">
-          <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${e.color} flex items-center justify-center text-white font-black text-xl shrink-0 shadow-md`}>
-            {e.inicial}
+    <div>
+      <p className="text-center text-[#d7c874] font-black text-sm uppercase tracking-widest mb-1">Nuestros Profesionales</p>
+      <p className="text-center text-[#0f766e] text-sm mb-6">Toda la experiencia en contactología especializada</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {equipo.map((e) => (
+          <div key={e.nombre} className="flex gap-4 bg-[#f0fdfa] border border-teal-100 rounded-2xl p-5 hover:border-[#d7c874] transition-colors">
+            <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${e.color} flex items-center justify-center text-white font-black text-xl shrink-0 shadow-md`}>
+              {e.inicial}
+            </div>
+            <div>
+              <p className="font-bold text-[#0f766e]">{e.nombre}</p>
+              <p className="text-[#0d9488] text-xs font-semibold mb-1">{e.cargo}</p>
+              <p className="text-slate-500 text-xs">{e.areas}</p>
+            </div>
           </div>
-          <div>
-            <p className="font-bold text-[#0f766e]">{e.nombre}</p>
-            <p className="text-[#0d9488] text-xs font-semibold mb-1">{e.cargo}</p>
-            <p className="text-slate-500 text-xs">{e.areas}</p>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

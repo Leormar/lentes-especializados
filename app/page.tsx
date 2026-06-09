@@ -77,9 +77,9 @@ function ServiciosHomepage() {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <p className="text-[#5b80d4] font-semibold text-sm uppercase tracking-widest mb-2">Lo que hacemos</p>
+          <p className="text-[#d7c874] font-bold text-sm uppercase tracking-widest mb-2">Lo que hacemos</p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2e3f8a] mb-3">Nuestros Servicios</h2>
-          <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full mb-4" />
+          <div className="w-16 h-1 bg-[#d7c874] mx-auto rounded-full mb-4" />
           <p className="text-slate-500 max-w-xl mx-auto text-sm leading-relaxed">
             La gama más completa de contactología especializada de Medellín, con tecnología diagnóstica de última generación.
           </p>
@@ -90,7 +90,7 @@ function ServiciosHomepage() {
             <Link
               key={s.id}
               href={`/servicios#${s.id}`}
-              className="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#5b80d4] transition-all duration-400 flex flex-col"
+              className="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl hover:border-[#d7c874] transition-all duration-400 flex flex-col"
             >
               {/* Photo */}
               <div className="relative overflow-hidden" style={{ height: 220 }}>
@@ -101,21 +101,21 @@ function ServiciosHomepage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a2a5e]/70 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 bg-white/90 text-[#2e3f8a] text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">
+                <span className="absolute top-3 left-3 bg-[#d7c874] text-[#1a2a5e] text-xs font-black px-3 py-1 rounded-full shadow-sm">
                   {s.tag}
                 </span>
               </div>
 
               {/* Text */}
-              <div className="p-5 flex flex-col flex-1 bg-white">
-                <h3 className="font-bold text-[#2e3f8a] text-lg mb-2 group-hover:text-[#5b80d4] transition-colors">
+              <div className="p-5 flex flex-col flex-1 bg-white border-t-2 border-transparent group-hover:border-[#d7c874] transition-colors">
+                <h3 className="font-bold text-[#2e3f8a] text-lg mb-2 group-hover:text-[#2e3f8a] transition-colors">
                   {s.titulo}
                 </h3>
                 <p className="text-slate-500 text-sm leading-relaxed flex-1 mb-4">{s.desc}</p>
-                <span className="text-[#5b80d4] text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span className="text-[#d7c874] text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
                   Ver más
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
               </div>
@@ -126,7 +126,7 @@ function ServiciosHomepage() {
         <div className="text-center mt-10">
           <Link
             href="/servicios"
-            className="inline-block border-2 border-[#2e3f8a] text-[#2e3f8a] px-8 py-3 rounded-full font-bold text-sm hover:bg-[#2e3f8a] hover:text-white transition-colors"
+            className="btn-shine inline-block border-2 border-[#d7c874] text-[#2e3f8a] px-8 py-3 rounded-full font-bold text-sm hover:bg-[#d7c874] transition-colors"
           >
             Ver todos los servicios con detalle →
           </Link>
@@ -141,7 +141,7 @@ function ValoresSection() {
     {
       icono: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="18" stroke="#5b80d4" strokeWidth="2" />
+          <circle cx="20" cy="20" r="18" stroke="#d7c874" strokeWidth="2" />
           <path d="M12 20l6 6 10-12" stroke="#2e3f8a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
@@ -151,7 +151,7 @@ function ValoresSection() {
     {
       icono: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="18" stroke="#5b80d4" strokeWidth="2" />
+          <circle cx="20" cy="20" r="18" stroke="#d7c874" strokeWidth="2" />
           <path d="M20 10v10l6 4" stroke="#2e3f8a" strokeWidth="2.5" strokeLinecap="round" />
         </svg>
       ),
@@ -161,9 +161,9 @@ function ValoresSection() {
     {
       icono: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-          <circle cx="20" cy="20" r="18" stroke="#5b80d4" strokeWidth="2" />
+          <circle cx="20" cy="20" r="18" stroke="#d7c874" strokeWidth="2" />
           <path d="M14 26c0-4 3-8 6-10M26 14c-1.5 4-4 7-6 9" stroke="#2e3f8a" strokeWidth="2.5" strokeLinecap="round" />
-          <circle cx="20" cy="20" r="3" fill="#5b80d4" />
+          <circle cx="20" cy="20" r="3" fill="#d7c874" />
         </svg>
       ),
       titulo: "Innovación",
@@ -172,11 +172,16 @@ function ValoresSection() {
   ];
 
   return (
-    <section className="py-14 bg-[#f0f9ff]">
+    <section className="py-14 bg-[#fffbeb]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10">
+          <p className="text-[#d7c874] font-black text-sm uppercase tracking-widest mb-2">Por qué elegirnos</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#2e3f8a] mb-3">Nuestra promesa</h2>
+          <div className="w-12 h-1 bg-[#d7c874] mx-auto rounded-full" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {valores.map((v) => (
-            <div key={v.titulo} className="bg-white rounded-2xl p-8 text-center border border-sky-100 shadow-sm hover:shadow-md hover:border-[#5b80d4] transition-all">
+            <div key={v.titulo} className="bg-white rounded-2xl p-8 text-center border-2 border-[#d7c874]/30 shadow-sm hover:shadow-md hover:border-[#d7c874] transition-all">
               <div className="flex justify-center mb-5">{v.icono}</div>
               <h3 className="text-xl font-bold text-[#2e3f8a] mb-3">{v.titulo}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
@@ -193,8 +198,9 @@ function SelectorSection() {
     <section className="py-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
+          <p className="text-[#d7c874] font-black text-sm uppercase tracking-widest mb-2">Guía personalizada</p>
           <h2 className="text-3xl font-bold text-[#2e3f8a] mb-3">¿No sabe qué lente necesita?</h2>
-          <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full mb-4" />
+          <div className="w-16 h-1 bg-[#d7c874] mx-auto rounded-full mb-4" />
           <p className="text-slate-600 leading-relaxed">Responda 3 preguntas y le indicamos qué tipo de lente especializado se adapta mejor a su caso.</p>
         </div>
         <SelectorInteractivo />
@@ -208,9 +214,9 @@ function MapaSection() {
     <section className="bg-[#f0f9ff]">
       {/* Título */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-8 text-center">
-        <p className="text-[#5b80d4] font-semibold text-sm uppercase tracking-widest mb-2">Cómo llegar</p>
+        <p className="text-[#d7c874] font-black text-sm uppercase tracking-widest mb-2">Cómo llegar</p>
         <h2 className="text-3xl font-bold text-[#2e3f8a] mb-3">Nuestra ubicación</h2>
-        <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full" />
+        <div className="w-16 h-1 bg-[#d7c874] mx-auto rounded-full" />
       </div>
 
       {/* Mapa full-width */}
@@ -288,8 +294,9 @@ function SolicitarCitaSection() {
     <section className="py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
+          <p className="text-[#d7c874] font-black text-sm uppercase tracking-widest mb-2">Agenda su consulta</p>
           <h2 className="text-3xl font-bold text-[#2e3f8a] mb-3">Solicitar Cita</h2>
-          <div className="w-16 h-1 bg-[#5b80d4] mx-auto rounded-full mb-4" />
+          <div className="w-16 h-1 bg-[#d7c874] mx-auto rounded-full mb-4" />
           <p className="text-slate-600">La forma más rápida de agendar es por WhatsApp. También puede dejarnos sus datos.</p>
         </div>
 
@@ -352,7 +359,7 @@ function SolicitarCitaSection() {
                 <option>Otro</option>
               </select>
             </div>
-            <button type="submit" className="w-full bg-[#2e3f8a] text-white py-3.5 rounded-xl font-semibold hover:bg-[#1a2a5e] transition-colors">
+            <button type="submit" className="btn-shine w-full bg-[#2e3f8a] text-white py-3.5 rounded-xl font-bold hover:bg-[#1a2a5e] transition-colors border-b-4 border-[#d7c874]/60">
               Enviar solicitud
             </button>
             <p className="text-xs text-slate-400 text-center">Para atención inmediata, prefiera el WhatsApp.</p>

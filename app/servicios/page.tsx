@@ -154,7 +154,7 @@ Trabajamos con pacientes de todas las edades: desde niños con ambliopía refrac
 export default function ServiciosPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white py-16 md:py-20">
+      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white pt-36 pb-16 md:pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-sky-300 font-semibold text-sm uppercase tracking-widest mb-4">Servicios</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">
