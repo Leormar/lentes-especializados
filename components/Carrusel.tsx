@@ -76,13 +76,9 @@ export default function Carrusel() {
         ) : null
       )}
 
-      {/* Dark gradient overlay */}
-      <div
-        className={`absolute inset-0 bg-gradient-to-br ${slide.bg} transition-opacity duration-700 ${slide.src ? "opacity-65" : "opacity-100"}`}
-      />
-
-      {/* Additional dark vignette for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+      {/* Overlay siempre translúcido — nunca tapa la foto */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/15" />
+      <div className="absolute inset-0 bg-[#1a2a5e]/30" />
 
       {/* Slide content — centered accounting for fixed navbar height */}
       <div

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Carrusel from "@/components/Carrusel";
 import TabsInfo from "@/components/TabsInfo";
 import SelectorInteractivo from "@/components/SelectorInteractivo";
+import ReseñasSection from "@/components/ReseñasSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <TabsInfo />
       <ValoresSection />
       <SelectorSection />
+      <ReseñasSection />
       <MapaSection />
       <SolicitarCitaSection />
     </>
