@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Servicios",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 const servicios = [
   {
     id: "esclerales",
+    imagen: "/banners/Banners_lentes_especializados-03.jpg",
     titulo: "Lentes Esclerales",
     subtitulo: "El estándar de oro en contactología de alta complejidad",
     descripcion: `Los lentes esclerales son lentes de contacto rígidos de gran diámetro que descansan completamente sobre la esclerótica (la parte blanca del ojo), creando un espacio entre el lente y la córnea que se llena de solución salina.
@@ -28,6 +30,7 @@ Este diseño único ofrece ventajas extraordinarias para casos complejos: la có
   },
   {
     id: "orthokeratologia",
+    imagen: "/banners/Banners_lentes_especializados-04.jpg",
     titulo: "Ortoqueratología · Control de Miopía",
     subtitulo: "Lentes nocturnos que corrigen la miopía mientras duerme — sin gafas ni lentes durante el día",
     descripcion: `La ortoqueratología (Ortho-K) utiliza lentes de contacto rígidos gas-permeables de geometría inversa, diseñados para usarse exclusivamente durante el sueño. Mientras el paciente duerme, el lente remodela de forma suave y controlada el epitelio corneal central: aplana la zona óptica y genera una zona periférica de tratamiento. Al retirar el lente en la mañana, la córnea mantiene temporalmente esa nueva forma y el paciente puede ver con claridad durante todo el día sin necesidad de gafas ni lentes de contacto blandos.
@@ -197,6 +200,13 @@ export default function ServiciosPage() {
                 <p className="text-[#5b80d4] font-medium">{s.subtitulo}</p>
               </div>
             </div>
+
+            {"imagen" in s && s.imagen && (
+              <div className="relative w-full rounded-2xl overflow-hidden mb-6 border border-blue-100 shadow-sm" style={{ height: 240 }}>
+                <Image src={s.imagen as string} alt={s.titulo} fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1a2a5e]/30 to-transparent" />
+              </div>
+            )}
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="md:col-span-2 space-y-4">
