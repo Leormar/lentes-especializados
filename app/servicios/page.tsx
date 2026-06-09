@@ -27,6 +27,31 @@ Este diseño único ofrece ventajas extraordinarias para casos complejos: la có
     nota: "Incluye adaptación completa + par de lentes. El precio final depende de la complejidad del caso.",
   },
   {
+    id: "orthokeratologia",
+    titulo: "Ortoqueratología · Control de Miopía",
+    subtitulo: "Lentes nocturnos que corrigen la miopía mientras duerme — sin gafas ni lentes durante el día",
+    descripcion: `La ortoqueratología (Ortho-K) utiliza lentes de contacto rígidos gas-permeables de geometría inversa, diseñados para usarse exclusivamente durante el sueño. Mientras el paciente duerme, el lente remodela de forma suave y controlada el epitelio corneal central: aplana la zona óptica y genera una zona periférica de tratamiento. Al retirar el lente en la mañana, la córnea mantiene temporalmente esa nueva forma y el paciente puede ver con claridad durante todo el día sin necesidad de gafas ni lentes de contacto blandos.
+
+**Evidencia científica en control de miopía:** La Ortho-K es la técnica con mayor respaldo en la literatura internacional para frenar la progresión de la miopía infantil. Los estudios más citados demuestran reducciones del 36–56% en la elongación axial del ojo comparada con gafas convencionales:
+
+• Estudio ROMIO (Cho & Cheung, Invest Ophthalmol Vis Sci, 2012): reducción del 43% en la elongación axial en niños de 6–12 años tras 2 años de uso.
+• Santodomingo-Rubido et al. (Invest Ophthalmol Vis Sci, 2012): 55% de reducción en el crecimiento axial en 2 años.
+• Estudio MCOS: beneficio sostenido y consistente a largo plazo.
+
+El mecanismo principal es la inducción de un desenfoque miópico periférico retiniano: la señal óptica que genera el perfil de potencia del lente Ortho-K actúa directamente sobre los mecanismos de emetropización que regulan el crecimiento axial ocular durante la infancia y la adolescencia.`,
+    indicaciones: [
+      "Miopía leve a moderada (hasta –6.00 D; algunos diseños hasta –8.00 D)",
+      "Astigmatismo hasta –1.75 D (diseños tóricos permiten valores mayores)",
+      "Niños y adolescentes con miopía progresiva (indicación principal)",
+      "Adultos miopes que buscan independencia de gafas y lentes durante el día",
+      "Deportistas, nadadores y personas en entornos con polvo o viento",
+      "Pacientes que no desean o no son candidatos a cirugía refractiva",
+      "Miopía progresiva con antecedente familiar de miopía alta",
+    ],
+    precio: "COP 2.800.000 – 4.200.000",
+    nota: "Incluye topografía corneal previa, adaptación completa y par de lentes Ortho-K. Requiere controles periódicos a 1 semana, 1 mes y cada 6 meses.",
+  },
+  {
     id: "rgp",
     titulo: "Lentes RGP e Híbridos",
     subtitulo: "Óptica superior para casos de complejidad media",
@@ -131,9 +156,16 @@ export default function ServiciosPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-5">
             Contactología de alta complejidad
           </h1>
-          <p className="text-sky-100 text-lg leading-relaxed max-w-2xl mx-auto">
-            Ofrecemos la gama más completa de servicios en lentes de contacto especializados de Medellín, con tecnología de topografía corneal de última generación.
+          <p className="text-sky-100 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+            La gama más completa de contactología especializada de Medellín, con tecnología de imagen corneal de última generación.
           </p>
+          <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+            {["Lentes blandos convencionales","Lentes rígidos gas-permeables","Lentes cosmoprotésicos","Lentes híbridos","Ortoqueratología · Control miopía","Lentes esclerales"].map((t) => (
+              <span key={t} className="bg-white/15 border border-white/25 text-white/90 text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

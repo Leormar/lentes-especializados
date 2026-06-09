@@ -29,6 +29,13 @@ const serviciosData = [
     tag: "Alta complejidad",
   },
   {
+    id: "orthokeratologia",
+    titulo: "Ortoqueratología · Ortho-K",
+    desc: "Lentes nocturnos que remodelan la córnea durante el sueño. Visión clara todo el día sin gafas. Control científico de la miopía infantil.",
+    foto: "/servicios/orthokeratologia.jpg",
+    tag: "Control de miopía",
+  },
+  {
     id: "rgp",
     titulo: "Lentes RGP e Híbridos",
     desc: "Óptica superior para astigmatismo irregular y alta miopía. Adaptación con topografía corneal.",

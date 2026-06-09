@@ -95,6 +95,7 @@ export default function TabsInfo() {
 function TabServicios() {
   const servicios = [
     { titulo: "Lentes Esclerales",     desc: "Para queratocono, córneas irregulares y ojo seco severo. El estándar de oro.",             href: "/servicios#esclerales" },
+    { titulo: "Ortoqueratología · Ortho-K", desc: "Lentes nocturnos para ver sin gafas de día. Control de miopía con evidencia científica.", href: "/servicios#orthokeratologia" },
     { titulo: "Lentes RGP / Híbridos", desc: "Óptica superior para astigmatismo irregular y alta miopía.",                              href: "/servicios#rgp" },
     { titulo: "Post-quirúrgico",        desc: "Adaptación tras LASIK, trasplante de córnea o implante de IOL.",                          href: "/servicios#post-quirurgico" },
     { titulo: "Ojo Seco Severo",        desc: "Protocolo integral. Los esclerales actúan como reservorio permanente de lágrima.",         href: "/servicios#ojo-seco" },
