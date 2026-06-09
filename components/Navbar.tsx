@@ -8,6 +8,7 @@ const links = [
   { href: "/",              label: "Inicio" },
   { href: "/quienes-somos", label: "Nosotros" },
   { href: "/servicios",     label: "Servicios" },
+  { href: "/educacion",     label: "Educación" },
   { href: "/contacto",      label: "Contáctenos" },
 ];
 

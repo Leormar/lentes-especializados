@@ -86,7 +86,7 @@ export default function Carrusel() {
           fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
         }`}
       >
-        <p className="text-sky-300 font-semibold text-xs sm:text-sm uppercase tracking-widest mb-4 drop-shadow">
+        <p className="text-[#d7c874] font-black text-xs sm:text-sm uppercase tracking-widest mb-4 drop-shadow">
           PROLENS · Centro de Contactología Especializada
         </p>
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-black max-w-4xl leading-tight mb-5 drop-shadow-lg">

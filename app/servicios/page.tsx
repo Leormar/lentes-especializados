@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import SectionBadge from "@/components/SectionBadge";
 
 export const metadata: Metadata = {
   title: "Servicios",
@@ -156,7 +157,7 @@ export default function ServiciosPage() {
     <>
       <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white pt-36 pb-16 md:pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-sky-300 font-semibold text-sm uppercase tracking-widest mb-4">Servicios</p>
+          <p className="text-[#d7c874] font-black text-sm uppercase tracking-widest mb-4">Servicios</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">
             Contactología de alta complejidad
           </h1>
