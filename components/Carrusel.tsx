@@ -22,9 +22,9 @@ const slides: Slide[] = [
     bg: "from-[#1a2a5e] to-[#2e3f8a]",
   },
   {
-    src: "/banners/Banners_lentes_especializados-03.jpg",
-    titulo: "Adaptamos Todo Tipo de Lentes de Contacto",
-    subtitulo: "Blandos convencionales · RGP · Cosmoprotésicos · Híbridos · Esclerales · Ortoqueratología. El lente exacto para su caso.",
+    src: "/banners/banner-02.jpg",
+    titulo: "Más de 30 Años Adaptando Lentes Especializados",
+    subtitulo: "Blandos · RGP · Cosmoprotésicos · Híbridos · Esclerales · Ortoqueratología. El lente exacto para su caso.",
     cta: "Ver todos los servicios",
     ctaHref: "/servicios",
     bg: "from-[#2e3f8a] to-[#3a5cc2]",
@@ -36,14 +36,6 @@ const slides: Slide[] = [
     cta: "Ver servicio MediView",
     ctaHref: "/servicios#mediview",
     bg: "from-[#3a5cc2] to-[#5b80d4]",
-  },
-  {
-    src: "/banners/Banners_lentes_especializados-04.jpg",
-    titulo: "Ortoqueratología · Visión Clara Sin Gafas",
-    subtitulo: "Lentes nocturnos que remodelan la córnea mientras duerme. Control científico de la miopía en niños y adultos.",
-    cta: "Conocer Ortho-K",
-    ctaHref: "/servicios#orthokeratologia",
-    bg: "from-[#1a2a5e] to-[#2e3f8a]",
   },
 ];
 

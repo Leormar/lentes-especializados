@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 const servicios = [
   {
     id: "esclerales",
-    imagen: "/banners/Banners_lentes_especializados-03.jpg",
     titulo: "Lentes Esclerales",
     subtitulo: "El estándar de oro en contactología de alta complejidad",
     descripcion: `Los lentes esclerales son lentes de contacto rígidos de gran diámetro que descansan completamente sobre la esclerótica (la parte blanca del ojo), creando un espacio entre el lente y la córnea que se llena de solución salina.
@@ -30,7 +29,7 @@ Este diseño único ofrece ventajas extraordinarias para casos complejos: la có
   },
   {
     id: "orthokeratologia",
-    imagen: "/banners/Banners_lentes_especializados-04.jpg",
+    imagen: "/servicios/orthokeratologia.jpg",
     titulo: "Ortoqueratología · Control de Miopía",
     subtitulo: "Lentes nocturnos que corrigen la miopía mientras duerme — sin gafas ni lentes durante el día",
     descripcion: `La ortoqueratología (Ortho-K) utiliza lentes de contacto rígidos gas-permeables de geometría inversa, diseñados para usarse exclusivamente durante el sueño. Mientras el paciente duerme, el lente remodela de forma suave y controlada el epitelio corneal central: aplana la zona óptica y genera una zona periférica de tratamiento. Al retirar el lente en la mañana, la córnea mantiene temporalmente esa nueva forma y el paciente puede ver con claridad durante todo el día sin necesidad de gafas ni lentes de contacto blandos.

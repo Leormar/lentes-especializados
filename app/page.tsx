@@ -25,14 +25,14 @@ const serviciosData = [
     id: "esclerales",
     titulo: "Lentes Esclerales",
     desc: "Para queratocono, córneas irregulares y ojo seco severo. El estándar de oro en contactología.",
-    foto: "/banners/Banners_lentes_especializados-03.jpg",
+    foto: "/servicios/esclerales.jpg",
     tag: "Alta complejidad",
   },
   {
     id: "orthokeratologia",
     titulo: "Ortoqueratología · Ortho-K",
     desc: "Lentes nocturnos que remodelan la córnea durante el sueño. Visión clara todo el día sin gafas. Control científico de la miopía infantil.",
-    foto: "/banners/Banners_lentes_especializados-04.jpg",
+    foto: "/servicios/orthokeratologia.jpg",
     tag: "Control de miopía",
   },
   {
