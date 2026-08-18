@@ -50,8 +50,8 @@ export default function Navbar() {
               priority
             />
           ) : (
-            <span className={`flex items-center gap-2 font-semibold ${glass ? "text-white" : "text-[#2e3f8a]"}`}>
-              <EyeIcon white={glass} />
+            <span className="flex items-center gap-2 font-semibold text-[#2e3f8a]">
+              <EyeIcon />
               <span className="text-lg tracking-tight">Lentes Especializados</span>
             </span>
           )}
@@ -256,9 +256,9 @@ export default function Navbar() {
   );
 }
 
-function EyeIcon({ white }: { white?: boolean }) {
-  const c = white ? "#fff" : "#2e3f8a";
-  const f = white ? "#ffffffaa" : "#5b80d4";
+function EyeIcon() {
+  const c = "#2e3f8a";
+  const f = "#5b80d4";
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
       <ellipse cx="14" cy="14" rx="12" ry="8" stroke={c} strokeWidth="2" />

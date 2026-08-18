@@ -47,22 +47,45 @@ const diferenciales = [
   {
     titulo: "Casos complejos",
     desc: "Cuando otros dicen 'no hay solución', nosotros empezamos a buscar. Nuestra especialización nos permite atender lo que otros no pueden.",
-    icon: "◎",
+    svg: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="#d7c874" strokeWidth="2"/>
+        <path d="M16.5 16.5L21 21" stroke="#d7c874" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M8.5 11l2 2 3.5-4" stroke="#d7c874" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
     titulo: "Tecnología de punta",
     desc: "Topografía corneal de alta resolución, imágenes de glándulas de Meibomio y pruebas de superficie ocular para diagnóstico preciso.",
-    icon: "◉",
+    svg: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M2 12S6 5.5 12 5.5 22 12 22 12s-4 6.5-10 6.5S2 12 2 12z" stroke="#d7c874" strokeWidth="2" strokeLinejoin="round"/>
+        <circle cx="12" cy="12" r="3" stroke="#d7c874" strokeWidth="2"/>
+      </svg>
+    ),
   },
   {
     titulo: "Equipo interdisciplinario",
     desc: "Optómetras y oftalmólogos trabajando juntos bajo un mismo techo. El mismo paciente recibe tratamiento médico y adaptación de lentes.",
-    icon: "✦",
+    svg: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="8.5" cy="8" r="3.5" stroke="#d7c874" strokeWidth="2"/>
+        <path d="M2.5 20c.7-3.5 3-5.5 6-5.5s5.3 2 6 5.5" stroke="#d7c874" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M15.5 5.2a3.5 3.5 0 0 1 0 5.6M18.2 14.8c2 .9 3.1 2.6 3.5 5.2" stroke="#d7c874" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
   },
   {
     titulo: "Seguimiento continuo",
     desc: "La adaptación no termina cuando el paciente se va a casa. Cada caso tiene seguimiento personalizado y acceso directo por WhatsApp.",
-    icon: "◈",
+    svg: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12a9 9 0 1 1-2.6-6.3" stroke="#d7c874" strokeWidth="2" strokeLinecap="round"/>
+        <path d="M21 4v4h-4" stroke="#d7c874" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 7.5V12l3 2" stroke="#d7c874" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    ),
   },
 ];
 
@@ -93,7 +116,7 @@ export default function QuienesSomosPage() {
               <h2 className="text-3xl font-bold text-[#2e3f8a] mb-5">30+ años buscando soluciones</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Lentes Especializados nació de una convicción: que los pacientes con condiciones visuales complejas merecen un lugar donde el "no hay nada más que hacer" no sea la respuesta.
+                  Lentes Especializados nació de una convicción: que los pacientes con condiciones visuales complejas merecen un lugar donde el &ldquo;no hay nada más que hacer&rdquo; no sea la respuesta.
                 </p>
                 <p>
                   El Dr. Leonardo Orjuela fundó el centro en 1992, cuando los lentes esclerales y los RGP personalizados eran una rareza en Colombia. Desde entonces, el centro ha crecido hasta ser un equipo interdisciplinario que combina optometría clínica de alta complejidad con oftalmología especializada en superficie ocular.
@@ -222,7 +245,7 @@ export default function QuienesSomosPage() {
             {diferenciales.map((v) => (
               <div key={v.titulo} className="flex gap-4 p-6 bg-white rounded-2xl border-2 border-[#d7c874]/20 hover:border-[#d7c874]/60 transition-colors shadow-sm">
                 <div className="w-11 h-11 rounded-xl bg-[#2e3f8a] flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="text-[#d7c874] text-lg font-black">{v.icon}</span>
+                  {v.svg}
                 </div>
                 <div>
                   <h3 className="font-bold text-[#2e3f8a] mb-1">{v.titulo}</h3>

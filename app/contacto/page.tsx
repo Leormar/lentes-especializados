@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -17,7 +18,7 @@ export default function ContactoPage() {
     <>
       <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white pt-36 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-sky-300 font-semibold text-sm uppercase tracking-widest mb-4">Contacto</p>
+          <p className="text-[#d7c874] font-black text-sm uppercase tracking-widest mb-4">Contacto</p>
           <h1 className="text-4xl md:text-5xl font-bold mb-5">Agende su consulta</h1>
           <p className="text-sky-100 text-lg max-w-xl mx-auto leading-relaxed">
             La manera más rápida de agendar es por WhatsApp. Aria, nuestra asistente virtual, le atiende en segundos.
@@ -113,72 +114,7 @@ export default function ContactoPage() {
 
         <div>
           <h2 className="text-2xl font-bold text-[#2e3f8a] mb-6">Envíenos un mensaje</h2>
-          <form className="space-y-4" action="mailto:info@lentesespecializados.com" method="GET">
-            <div>
-              <label htmlFor="nombre" className="block text-sm font-medium text-slate-700 mb-1">
-                Nombre completo
-              </label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all"
-                placeholder="Su nombre"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
-                Correo electrónico
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all"
-                placeholder="su@correo.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="condicion" className="block text-sm font-medium text-slate-700 mb-1">
-                ¿Cuál es su condición o motivo de consulta?
-              </label>
-              <select
-                id="condicion"
-                name="condicion"
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all"
-              >
-                <option value="">Seleccione una opción</option>
-                <option value="queratocono">Queratocono</option>
-                <option value="post-lasik">Post-LASIK / Post-cirugía</option>
-                <option value="ojo-seco">Ojo seco severo</option>
-                <option value="intolerancia-lentes">Intolerancia a lentes convencionales</option>
-                <option value="cornea-irregular">Córnea irregular</option>
-                <option value="baja-vision">Baja visión</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="mensaje" className="block text-sm font-medium text-slate-700 mb-1">
-                Mensaje (opcional)
-              </label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows={4}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#5b80d4] focus:border-transparent transition-all resize-none"
-                placeholder="Cuéntenos brevemente su situación..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#2e3f8a] text-white py-3.5 rounded-xl font-semibold hover:bg-[#1a2a5e] transition-colors"
-            >
-              Enviar mensaje
-            </button>
-            <p className="text-xs text-slate-400 text-center">
-              Para respuesta inmediata, prefiera el WhatsApp. El correo se responde en 24 horas hábiles.
-            </p>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </>

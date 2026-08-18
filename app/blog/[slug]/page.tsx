@@ -30,7 +30,7 @@ export default async function ArticuloPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white py-14">
+      <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white pt-36 pb-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-2 text-sky-300 text-sm mb-6">
             <Link href="/blog" className="hover:text-white transition-colors">Educación</Link>

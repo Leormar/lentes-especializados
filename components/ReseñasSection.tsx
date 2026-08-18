@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function ReseñasSection() {
   return (
     <section className="py-14 bg-white border-t border-slate-100">

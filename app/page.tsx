@@ -17,13 +17,66 @@ export default function Home() {
 
 /* ──────────── Qué lente necesita ──────────── */
 const lensTypes = [
-  { id: "esclerales",       icon: "◎", label: "Lentes Esclerales",    sub: "Córneas irregulares · Ojo seco severo" },
-  { id: "orthokeratologia", icon: "🌙", label: "Ortoqueratología",     sub: "Visión sin gafas · Control miopía" },
-  { id: "rgp",              icon: "◈", label: "RGP / Híbridos",        sub: "Alta miopía · Astigmatismo irregular" },
-  { id: "post-quirurgico",  icon: "✦", label: "Post-Quirúrgico",       sub: "LASIK · Trasplante · IOL" },
-  { id: "ojo-seco",         icon: "💧", label: "Ojo Seco Severo",      sub: "Diagnóstico y tratamiento integral" },
-  { id: "mediview",         icon: "◉", label: "Imágenes MediView",    sub: "Diagnóstico de superficie ocular" },
+  { id: "esclerales",       label: "Lentes Esclerales",    sub: "Córneas irregulares · Ojo seco severo" },
+  { id: "orthokeratologia", label: "Ortoqueratología",     sub: "Visión sin gafas · Control miopía" },
+  { id: "rgp",              label: "RGP / Híbridos",       sub: "Alta miopía · Astigmatismo irregular" },
+  { id: "post-quirurgico",  label: "Post-Quirúrgico",      sub: "LASIK · Trasplante · IOL" },
+  { id: "ojo-seco",         label: "Ojo Seco Severo",      sub: "Diagnóstico y tratamiento integral" },
+  { id: "mediview",         label: "Imágenes MediView",    sub: "Diagnóstico de superficie ocular" },
 ];
+
+/* Íconos de línea profesionales — azul institucional con acento dorado */
+function LensIcon({ id }: { id: string }) {
+  const azul = "#2e3f8a";
+  const dorado = "#d7c874";
+  switch (id) {
+    case "esclerales": // lente escleral: cúpula sobre la córnea
+      return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <path d="M4 21c0-7 5-12 11-12s11 5 11 12" stroke={azul} strokeWidth="2" strokeLinecap="round"/>
+          <path d="M8 21c0-4.5 3.2-8 7-8s7 3.5 7 8" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
+          <line x1="2" y1="21" x2="28" y2="21" stroke={azul} strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      );
+    case "orthokeratologia": // luna: lentes de uso nocturno
+      return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <path d="M25 18.5A10.5 10.5 0 0 1 11.5 5 10.5 10.5 0 1 0 25 18.5z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
+          <circle cx="21" cy="8" r="1.5" fill={dorado}/>
+        </svg>
+      );
+    case "rgp": // capas ópticas: centro rígido + falda
+      return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <ellipse cx="15" cy="15" rx="12" ry="7.5" stroke={azul} strokeWidth="2"/>
+          <ellipse cx="15" cy="15" rx="6.5" ry="4" stroke={dorado} strokeWidth="2"/>
+          <circle cx="15" cy="15" r="1.5" fill={azul}/>
+        </svg>
+      );
+    case "post-quirurgico": // cruz médica en escudo
+      return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <path d="M15 3l9 3.5V14c0 5.5-3.8 9.5-9 11-5.2-1.5-9-5.5-9-11V6.5L15 3z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
+          <path d="M15 9.5v9M10.5 14h9" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      );
+    case "ojo-seco": // gota de línea
+      return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <path d="M15 3.5S6.5 13 6.5 18.5a8.5 8.5 0 0 0 17 0C23.5 13 15 3.5 15 3.5z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
+          <path d="M11 18.5a4 4 0 0 0 3 4" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      );
+    default: // mediview: ojo con línea de escaneo
+      return (
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+          <path d="M2.5 15S7.5 7 15 7s12.5 8 12.5 8-5 8-12.5 8S2.5 15 2.5 15z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
+          <circle cx="15" cy="15" r="3.5" stroke={dorado} strokeWidth="2"/>
+          <line x1="15" y1="4" x2="15" y2="7" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
+        </svg>
+      );
+  }
+}
 
 function LentesSection() {
   return (
@@ -50,7 +103,7 @@ function LentesSection() {
               href={`/servicios#${l.id}`}
               className="group flex items-center gap-3 bg-[#fffbeb] border-2 border-[#d7c874]/30 rounded-2xl p-4 hover:border-[#d7c874] hover:shadow-md transition-all"
             >
-              <span className="text-2xl shrink-0">{l.icon}</span>
+              <span className="shrink-0"><LensIcon id={l.id} /></span>
               <div>
                 <p className="font-bold text-[#2e3f8a] text-sm leading-snug group-hover:text-[#2e3f8a]">
                   {l.label}
@@ -71,7 +124,7 @@ function LentesSection() {
         </div>
 
         {/* Separador dorado */}
-        <div className="flex items-center gap-4 mb-10">
+        <div id="selector" className="flex items-center gap-4 mb-10 scroll-mt-36">
           <div className="flex-1 h-px bg-[#d7c874]/30" />
           <span className="text-[#d7c874] font-black text-xs uppercase tracking-widest whitespace-nowrap">
             Orientador interactivo
