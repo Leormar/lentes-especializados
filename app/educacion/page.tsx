@@ -3,7 +3,9 @@ import Link from "next/link";
 import { articulos } from "@/lib/articulos";
 
 export const metadata: Metadata = {
-  title: "Educación | Lentes Especializados",
+  title: "Educación",
+  // Página en construcción: fuera del índice hasta que tenga contenido real.
+  robots: { index: false, follow: true },
   description:
     "Centro de educación y recursos clínicos de Lentes Especializados. Próximamente: artículos sobre queratocono, lentes esclerales, ortoqueratología y ojo seco.",
 };

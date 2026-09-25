@@ -3,7 +3,8 @@ import Link from "next/link";
 import { articulos } from "@/lib/articulos";
 
 export const metadata: Metadata = {
-  title: "Educación Visual",
+  title: "Educación Visual — Queratocono y Lentes Especializados",
+  alternates: { canonical: "/blog" },
   description:
     "Artículos sobre queratocono, lentes esclerales, RGP, ojo seco y contactología especializada escritos por expertos en Medellín.",
 };

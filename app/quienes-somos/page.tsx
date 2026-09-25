@@ -3,7 +3,8 @@ import Link from "next/link";
 import SectionBadge from "@/components/SectionBadge";
 
 export const metadata: Metadata = {
-  title: "Quiénes somos | Lentes Especializados",
+  title: "Quiénes somos",
+  alternates: { canonical: "/quienes-somos" },
   description:
     "Conozca al equipo de Lentes Especializados: especialistas en contactología de alta complejidad con más de 30 años de experiencia en Medellín.",
 };

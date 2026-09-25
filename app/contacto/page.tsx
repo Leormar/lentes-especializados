@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contacto",
+  title: "Agende su consulta en Medellín",
+  alternates: { canonical: "/contacto" },
   description:
     "Agende su consulta en Lentes Especializados, Medellín. Torre Médica Ciudad del Río. WhatsApp, correo o formulario.",
 };

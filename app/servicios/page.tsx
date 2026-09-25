@@ -3,9 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Servicios",
+  title: "Lentes Esclerales, RGP e Híbridos en Medellín",
   description:
     "Servicios de contactología especializada: lentes esclerales, RGP, híbridos, adaptación post-quirúrgica y manejo de ojo seco severo en Medellín.",
+  alternates: { canonical: "/servicios" },
 };
 
 const servicios = [

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { articulos, getArticulo } from "@/lib/articulos";
+import { JsonLd, articuloJsonLd, migasJsonLd } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -16,6 +17,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: articulo.titulo,
     description: articulo.resumen,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      type: "article",
+      title: articulo.titulo,
+      description: articulo.resumen,
+      url: `/blog/${slug}`,
+      publishedTime: articulo.fecha,
+      authors: [articulo.autor],
+    },
   };
 }
 
@@ -30,6 +40,14 @@ export default async function ArticuloPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={articuloJsonLd(articulo)} />
+      <JsonLd
+        data={migasJsonLd([
+          { nombre: "Inicio", url: "/" },
+          { nombre: "Educación", url: "/blog" },
+          { nombre: articulo.titulo, url: `/blog/${articulo.slug}` },
+        ])}
+      />
       <section className="bg-gradient-to-br from-[#2e3f8a] to-[#1a2a5e] text-white pt-36 pb-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-2 text-sky-300 text-sm mb-6">
