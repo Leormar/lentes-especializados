@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import SectionBadge from "@/components/SectionBadge";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ const equipo = [
     nombre: "Dr. Leonardo Orjuela Mariño",
     titulo: "OD · Director Científico",
     inicial: "O",
+    foto: "/equipo/leonardo-orjuela.jpg",
     color: "from-[#2e3f8a] to-[#5b80d4]",
     especialidades: ["Contactología avanzada: esclerales, RGP, híbridos", "Lentes post-quirúrgicos", "Baja visión", "Queratocono y ectasias corneales"],
     bio: "Con más de 30 años de experiencia, el Dr. Orjuela es uno de los referentes de contactología especializada en Colombia. Fundó el centro en 1992 con la visión de ofrecer soluciones a los casos que la optometría convencional no puede resolver. Ha adaptado lentes a miles de pacientes con queratocono, córneas irregulares y ojo seco severo.",
@@ -208,9 +210,21 @@ export default function QuienesSomosPage() {
             {equipo.map((e) => (
               <div key={e.nombre} className="bg-white rounded-2xl p-7 border-2 border-[#d7c874]/20 shadow-sm hover:border-[#d7c874]/60 transition-colors">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${e.color} flex items-center justify-center text-white font-black text-xl shrink-0 shadow-md`}>
-                    {e.inicial}
-                  </div>
+                  {"foto" in e && e.foto ? (
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden shrink-0 shadow-md ring-2 ring-[#d7c874]/40">
+                      <Image
+                        src={e.foto as string}
+                        alt={e.nombre}
+                        fill
+                        sizes="56px"
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${e.color} flex items-center justify-center text-white font-black text-xl shrink-0 shadow-md`}>
+                      {e.inicial}
+                    </div>
+                  )}
                   <div>
                     <h3 className="font-bold text-[#2e3f8a] text-lg leading-snug">{e.nombre}</h3>
                     <p className="text-[#5b80d4] text-sm font-semibold">{e.titulo}</p>

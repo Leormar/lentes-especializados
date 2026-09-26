@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Carrusel from "@/components/Carrusel";
 import SelectorInteractivo from "@/components/SelectorInteractivo";
 import ReseñasSection from "@/components/ReseñasSection";
@@ -17,66 +18,13 @@ export default function Home() {
 
 /* ──────────── Qué lente necesita ──────────── */
 const lensTypes = [
-  { id: "esclerales",       label: "Lentes Esclerales",    sub: "Córneas irregulares · Ojo seco severo" },
-  { id: "orthokeratologia", label: "Ortoqueratología",     sub: "Visión sin gafas · Control miopía" },
-  { id: "rgp",              label: "RGP / Híbridos",       sub: "Alta miopía · Astigmatismo irregular" },
-  { id: "post-quirurgico",  label: "Post-Quirúrgico",      sub: "LASIK · Trasplante · IOL" },
-  { id: "ojo-seco",         label: "Ojo Seco Severo",      sub: "Diagnóstico y tratamiento integral" },
-  { id: "mediview",         label: "Imágenes MediView",    sub: "Diagnóstico de superficie ocular" },
+  { id: "esclerales",       label: "Lentes Esclerales",    sub: "Córneas irregulares · Ojo seco severo",  foto: "/servicios/esclerales.jpg" },
+  { id: "orthokeratologia", label: "Ortoqueratología",     sub: "Visión sin gafas · Control miopía",      foto: "/servicios/orthokeratologia.jpg" },
+  { id: "rgp",              label: "RGP / Híbridos",       sub: "Alta miopía · Astigmatismo irregular",   foto: "/servicios/rgp.jpg" },
+  { id: "post-quirurgico",  label: "Post-Quirúrgico",      sub: "LASIK · Trasplante · IOL",               foto: "/servicios/post-quirurgico.jpg" },
+  { id: "ojo-seco",         label: "Ojo Seco Severo",      sub: "Diagnóstico y tratamiento integral",     foto: "/servicios/ojo-seco.jpg" },
+  { id: "mediview",         label: "Imágenes MediView",    sub: "Diagnóstico de superficie ocular",       foto: "/servicios/mediview.jpg" },
 ];
-
-/* Íconos de línea profesionales — azul institucional con acento dorado */
-function LensIcon({ id }: { id: string }) {
-  const azul = "#2e3f8a";
-  const dorado = "#d7c874";
-  switch (id) {
-    case "esclerales": // lente escleral: cúpula sobre la córnea
-      return (
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-          <path d="M4 21c0-7 5-12 11-12s11 5 11 12" stroke={azul} strokeWidth="2" strokeLinecap="round"/>
-          <path d="M8 21c0-4.5 3.2-8 7-8s7 3.5 7 8" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
-          <line x1="2" y1="21" x2="28" y2="21" stroke={azul} strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      );
-    case "orthokeratologia": // luna: lentes de uso nocturno
-      return (
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-          <path d="M25 18.5A10.5 10.5 0 0 1 11.5 5 10.5 10.5 0 1 0 25 18.5z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
-          <circle cx="21" cy="8" r="1.5" fill={dorado}/>
-        </svg>
-      );
-    case "rgp": // capas ópticas: centro rígido + falda
-      return (
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-          <ellipse cx="15" cy="15" rx="12" ry="7.5" stroke={azul} strokeWidth="2"/>
-          <ellipse cx="15" cy="15" rx="6.5" ry="4" stroke={dorado} strokeWidth="2"/>
-          <circle cx="15" cy="15" r="1.5" fill={azul}/>
-        </svg>
-      );
-    case "post-quirurgico": // cruz médica en escudo
-      return (
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-          <path d="M15 3l9 3.5V14c0 5.5-3.8 9.5-9 11-5.2-1.5-9-5.5-9-11V6.5L15 3z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M15 9.5v9M10.5 14h9" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      );
-    case "ojo-seco": // gota de línea
-      return (
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-          <path d="M15 3.5S6.5 13 6.5 18.5a8.5 8.5 0 0 0 17 0C23.5 13 15 3.5 15 3.5z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M11 18.5a4 4 0 0 0 3 4" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      );
-    default: // mediview: ojo con línea de escaneo
-      return (
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
-          <path d="M2.5 15S7.5 7 15 7s12.5 8 12.5 8-5 8-12.5 8S2.5 15 2.5 15z" stroke={azul} strokeWidth="2" strokeLinejoin="round"/>
-          <circle cx="15" cy="15" r="3.5" stroke={dorado} strokeWidth="2"/>
-          <line x1="15" y1="4" x2="15" y2="7" stroke={dorado} strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      );
-  }
-}
 
 function LentesSection() {
   return (
@@ -101,14 +49,23 @@ function LentesSection() {
             <Link
               key={l.id}
               href={`/servicios#${l.id}`}
-              className="group flex items-center gap-3 bg-[#fffbeb] border-2 border-[#d7c874]/30 rounded-2xl p-4 hover:border-[#d7c874] hover:shadow-md transition-all"
+              className="group overflow-hidden bg-white border-2 border-[#d7c874]/30 rounded-2xl hover:border-[#d7c874] hover:shadow-lg transition-all"
             >
-              <span className="shrink-0"><LensIcon id={l.id} /></span>
-              <div>
-                <p className="font-bold text-[#2e3f8a] text-sm leading-snug group-hover:text-[#2e3f8a]">
+              <div className="relative w-full aspect-[4/3] overflow-hidden bg-slate-100">
+                <Image
+                  src={l.foto}
+                  alt={`${l.label} — ${l.sub}`}
+                  fill
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 320px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a2a5e]/45 to-transparent" />
+              </div>
+              <div className="p-4">
+                <p className="font-bold text-[#2e3f8a] text-sm leading-snug">
                   {l.label}
                 </p>
-                <p className="text-slate-400 text-xs leading-tight mt-0.5">{l.sub}</p>
+                <p className="text-slate-500 text-xs leading-tight mt-0.5">{l.sub}</p>
               </div>
             </Link>
           ))}

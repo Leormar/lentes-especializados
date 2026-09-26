@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useState } from "react";
 
@@ -42,6 +43,13 @@ const pasos: Paso[] = [
     ],
   },
 ];
+
+/* Foto real del servicio recomendado — reemplaza el icono genérico */
+const FOTO_SERVICIO: Record<string, string> = {
+  esclerales: "/servicios/esclerales.jpg",
+  "post-quirurgico": "/servicios/post-quirurgico.jpg",
+  "ojo-seco": "/servicios/ojo-seco.jpg",
+};
 
 const calcularResultado = (respuestas: string[]): Resultado => {
   const [cond, exp, prob] = respuestas;
@@ -110,10 +118,14 @@ export default function SelectorInteractivo() {
   if (resultado) {
     return (
       <div className="bg-[#2e3f8a] text-white rounded-2xl p-8 text-center">
-        <div className="w-12 h-12 bg-[#5b80d4] rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 13l4 4L19 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <div className="relative w-full max-w-sm mx-auto aspect-[16/10] rounded-xl overflow-hidden mb-6 ring-2 ring-[#d7c874]/40">
+          <Image
+            src={FOTO_SERVICIO[resultado.servicio] ?? "/servicios/esclerales.jpg"}
+            alt={resultado.titulo}
+            fill
+            sizes="(max-width: 640px) 90vw, 384px"
+            className="object-cover"
+          />
         </div>
         <p className="text-sky-300 text-sm font-medium mb-2">Su perfil sugiere:</p>
         <h3 className="text-2xl font-bold mb-3">{resultado.titulo}</h3>
