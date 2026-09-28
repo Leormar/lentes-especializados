@@ -57,10 +57,10 @@ export const metadata: Metadata = {
       "La solución cuando los demás han fallado. Adaptamos lentes para queratocono, post-cirugía y ojo seco severo.",
     images: [
       {
-        url: "/brand/og-image.png",
+        url: "/logo-cuadrado.png",
         width: 1200,
-        height: 630,
-        alt: "cuidatuslentes.com — Lentes Especializados",
+        height: 1200,
+        alt: "Lentes Especializados — PROLENS",
       },
     ],
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Lentes Esclerales y Contactología Especializada en Medellín",
     description:
       "Adaptamos lentes para queratocono, córneas irregulares, post-cirugía y ojo seco severo.",
-    images: ["/brand/og-image.png"],
+    images: ["/logo-cuadrado.png"],
   },
   robots: {
     index: true,

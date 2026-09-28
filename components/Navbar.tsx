@@ -40,11 +40,12 @@ export default function Navbar() {
         <Link href="/" className="nav-logo-link flex items-center">
           {!logoError ? (
             <Image
-              src="/brand/logo-horizontal.svg"
-              alt="cuidatuslentes.com — Lentes Especializados"
-              width={1520}
-              height={440}
-              className="h-20 w-auto object-contain transition-all duration-500"
+              src="/logo.png"
+              alt="Lentes Especializados"
+              width={380}
+              height={114}
+              className="h-24 w-auto object-contain transition-all duration-500"
+              style={{}}
               onError={() => setLogoError(true)}
               priority
             />

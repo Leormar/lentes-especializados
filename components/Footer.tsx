@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -6,13 +5,7 @@ export default function Footer() {
     <footer className="bg-[#2e3f8a] text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="md:col-span-1">
-          <Image
-            src="/brand/logo-horizontal-blanco.svg"
-            alt="cuidatuslentes.com — Lentes Especializados"
-            width={1520}
-            height={440}
-            className="h-14 w-auto object-contain mb-3"
-          />
+          <p className="font-bold text-lg mb-2">Lentes Especializados</p>
           <p className="text-sky-200 text-sm leading-relaxed mb-5">
             Contactología de alta complejidad en Medellín. Adaptamos lentes para los casos que otros no pueden resolver.
           </p>

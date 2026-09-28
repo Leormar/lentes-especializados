@@ -31,8 +31,8 @@ export function clinicaJsonLd() {
     description: NEGOCIO.descripcion,
     telephone: NEGOCIO.telefono,
     email: NEGOCIO.email,
-    image: `${SITE_URL}/brand/og-image.png`,
-    logo: `${SITE_URL}/brand/icono-512.png`,
+    image: `${SITE_URL}/logo-cuadrado.png`,
+    logo: `${SITE_URL}/logo-cuadrado.png`,
     priceRange: "$$",
     currenciesAccepted: "COP",
     address: {
