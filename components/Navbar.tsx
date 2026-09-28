@@ -34,7 +34,11 @@ export default function Navbar() {
           : "bg-white/98 backdrop-blur shadow-md"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-28 flex items-center justify-between">
+      <nav
+        className={`max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-500 ${
+          glass ? "h-32" : "h-[5.5rem]"
+        }`}
+      >
 
         {/* Logo */}
         <Link href="/" className="nav-logo-link flex items-center">
@@ -44,7 +48,9 @@ export default function Navbar() {
               alt="Lentes Especializados"
               width={380}
               height={114}
-              className="h-24 w-auto object-contain transition-all duration-500"
+              className={`w-auto object-contain transition-all duration-500 ${
+                glass ? "h-28" : "h-[4.5rem]"
+              }`}
               style={{}}
               onError={() => setLogoError(true)}
               priority
@@ -58,7 +64,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {links.map((l, i) => (
             <Link
               key={l.href}
@@ -126,6 +132,21 @@ export default function Navbar() {
           80%  { transform: translateY(-2px) scale(0.99); }
           100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
         }
+        /* Aladino de entrada: el mismo rebote con rotación de los badges */
+        @keyframes aladino-tab {
+          0%   { opacity: 0; transform: scale(0.55) rotate(-9deg) translateY(22px); }
+          40%  { transform: scale(1.22) rotate(5deg) translateY(-8px); }
+          62%  { transform: scale(0.91) rotate(-2deg) translateY(3px); }
+          80%  { transform: scale(1.07) rotate(1deg) translateY(-1px); }
+          100% { opacity: 1; transform: scale(1) rotate(0deg) translateY(0); }
+        }
+        /* Escalonado: cada pestaña entra un poco después que la anterior */
+        .nav-link:nth-of-type(1) { animation-delay: 0.05s; }
+        .nav-link:nth-of-type(2) { animation-delay: 0.13s; }
+        .nav-link:nth-of-type(3) { animation-delay: 0.21s; }
+        .nav-link:nth-of-type(4) { animation-delay: 0.29s; }
+        .nav-link:nth-of-type(5) { animation-delay: 0.37s; }
+
         @keyframes link-hop {
           0%   { transform: translateY(0) scale(1) rotate(0deg); }
           30%  { transform: translateY(-8px) scale(1.14) rotate(-2.2deg); }
@@ -146,10 +167,10 @@ export default function Navbar() {
           font-size: 0.95rem;
           font-weight: 700;
           letter-spacing: 0.01em;
-          padding: 8px 16px;
+          padding: 8px 13px;
           border-radius: 999px;
           text-decoration: none;
-          animation: nav-in 0.55s cubic-bezier(0.22,1,0.36,1) both;
+          animation: aladino-tab 0.8s cubic-bezier(0.22,1,0.36,1) both;
           transition: color 0.25s, background-color 0.25s, box-shadow 0.25s;
         }
         .nav-link::after {
@@ -208,6 +229,7 @@ export default function Navbar() {
 
         /* ── CTA button shared ────────────────────────────── */
         .cta-btn {
+          white-space: nowrap;
           position: relative;
           overflow: hidden;
           display: inline-flex;

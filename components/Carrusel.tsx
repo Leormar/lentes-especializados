@@ -42,6 +42,46 @@ const slides: Slide[] = [
     ctaHref: "/servicios#mediview",
     bg: "from-[#3a5cc2] to-[#5b80d4]",
   },
+  {
+    src: "/banners/colocacion-lente-ojo.jpg",
+    titulo: "Colocarse el Lente Sin Miedo",
+    subtitulo: "Le enseñamos la técnica paso a paso. La mayoría de pacientes lo domina en la primera sesión de entrenamiento.",
+    cta: "Agendar entrenamiento",
+    ctaHref: "https://wa.me/573113154316?text=Hola,%20quiero%20aprender%20a%20colocarme%20los%20lentes",
+    bg: "from-[#1a2a5e] to-[#2e3f8a]",
+  },
+  {
+    src: "/banners/lente-en-dedo.jpg",
+    titulo: "Cada Lente, Hecho a la Medida de Su Córnea",
+    subtitulo: "Mapeamos la superficie de su ojo con topografía corneal antes de elegir el diseño. Ningún lente es genérico.",
+    cta: "Conocer el proceso",
+    ctaHref: "/servicios",
+    bg: "from-[#2e3f8a] to-[#3a5cc2]",
+  },
+  {
+    src: "/banners/cuidado-lente-estuche.jpg",
+    titulo: "El Cuidado Correcto Alarga la Vida del Lente",
+    subtitulo: "Limpieza, solución adecuada y reemplazo a tiempo. Le explicamos la rutina que protege su lente y su ojo.",
+    cta: "Ver guía de cuidado",
+    ctaHref: "/blog",
+    bg: "from-[#3a5cc2] to-[#5b80d4]",
+  },
+  {
+    src: "/banners/estuche-solucion.jpg",
+    titulo: "Soluciones y Accesorios Recomendados",
+    subtitulo: "No todas las soluciones sirven para todos los lentes. Le indicamos cuál corresponde a su tipo de adaptación.",
+    cta: "Consultar por WhatsApp",
+    ctaHref: "https://wa.me/573113154316?text=Hola,%20quiero%20asesoría%20sobre%20el%20cuidado%20de%20mis%20lentes",
+    bg: "from-[#1a2a5e] to-[#3a5cc2]",
+  },
+  {
+    src: "/banners/detalle-lente.jpg",
+    titulo: "Revisión y Seguimiento Periódico",
+    subtitulo: "Controlamos el estado del lente y la salud de su córnea en cada cita. La adaptación se ajusta con el tiempo.",
+    cta: "Agendar control",
+    ctaHref: "https://wa.me/573113154316?text=Hola,%20quiero%20agendar%20un%20control%20de%20mis%20lentes",
+    bg: "from-[#2e3f8a] to-[#1a2a5e]",
+  },
 ];
 
 export default function Carrusel() {
@@ -135,9 +175,11 @@ export default function Carrusel() {
             <span className="hero-shine" aria-hidden="true" />
             <span className="relative z-10">{slide.cta}</span>
           </a>
-          <a href="/servicios" className="hero-cta-secondary">
-            Ver todos los servicios →
-          </a>
+          {slide.ctaHref !== "/servicios" && (
+            <a href="/servicios" className="hero-cta-secondary">
+              Ver todos los servicios →
+            </a>
+          )}
         </div>
       </div>
 
