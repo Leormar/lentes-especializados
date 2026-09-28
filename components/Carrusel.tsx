@@ -4,7 +4,12 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 type Slide = {
+  /** Imagen de fondo. Se ignora si el slide trae video. */
   src?: string;
+  /** Video de fondo (.mp4/.webm). Tiene prioridad sobre src. */
+  video?: string;
+  /** Imagen que se muestra mientras el video carga. */
+  poster?: string;
   titulo: string;
   subtitulo: string;
   cta: string;
@@ -62,19 +67,44 @@ export default function Carrusel() {
     /* Full-screen: covers the viewport including behind the fixed navbar */
     <div className="relative w-full overflow-hidden" style={{ height: "100dvh" }}>
 
-      {/* Background images */}
-      {slides.map((s, i) =>
-        s.src ? (
+      {/* Fondos: video o imagen según el slide */}
+      {slides.map((s, i) => {
+        const visible = i === actual;
+        const clases = `absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+          visible ? "opacity-100" : "opacity-0"
+        }`;
+
+        if (s.video) {
+          return (
+            <video
+              key={s.video}
+              src={s.video}
+              poster={s.poster}
+              className={clases}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload={i === 0 ? "auto" : "metadata"}
+              aria-label={s.titulo}
+            />
+          );
+        }
+
+        return s.src ? (
           <Image
             key={s.src}
             src={s.src}
             alt={s.titulo}
             fill
             priority={i === 0}
-            className={`object-cover transition-opacity duration-700 ${i === actual ? "opacity-100" : "opacity-0"}`}
+            sizes="100vw"
+            className={`object-cover transition-opacity duration-700 ${
+              visible ? "opacity-100" : "opacity-0"
+            }`}
           />
-        ) : null
-      )}
+        ) : null;
+      })}
 
       {/* Overlay siempre translúcido — nunca tapa la foto */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/15" />

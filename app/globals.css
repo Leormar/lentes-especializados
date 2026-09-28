@@ -8,6 +8,7 @@
   --color-accent: #7ba7f0;
   --color-surface: #f0f9ff;
   --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Hind", "Inter", system-ui, sans-serif;
 }
 
 html {
@@ -19,6 +20,13 @@ body {
   color: #0f172a;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* ══ Titulares con la tipografía de impacto ══════════════════════ */
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
 }
 
 /* ══ Badge de sección — animación Aladino ═════════════════════════ */

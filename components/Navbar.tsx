@@ -127,9 +127,10 @@ export default function Navbar() {
           100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
         }
         @keyframes link-hop {
-          0%   { transform: translateY(0) scale(1); }
-          35%  { transform: translateY(-6px) scale(1.1) rotate(-1.2deg); }
-          65%  { transform: translateY(2px) scale(0.97) rotate(0.5deg); }
+          0%   { transform: translateY(0) scale(1) rotate(0deg); }
+          30%  { transform: translateY(-8px) scale(1.14) rotate(-2.2deg); }
+          55%  { transform: translateY(3px) scale(0.95) rotate(1deg); }
+          78%  { transform: translateY(-2px) scale(1.04) rotate(-0.4deg); }
           100% { transform: translateY(0) scale(1) rotate(0deg); }
         }
         @keyframes shine-sweep {
@@ -141,13 +142,15 @@ export default function Navbar() {
         /* ── Nav links ────────────────────────────────────── */
         .nav-link {
           position: relative;
-          font-size: 0.9rem;
+          font-family: var(--font-display);
+          font-size: 0.95rem;
           font-weight: 700;
-          letter-spacing: 0.02em;
-          padding: 6px 2px;
+          letter-spacing: 0.01em;
+          padding: 8px 16px;
+          border-radius: 999px;
           text-decoration: none;
           animation: nav-in 0.55s cubic-bezier(0.22,1,0.36,1) both;
-          transition: color 0.25s;
+          transition: color 0.25s, background-color 0.25s, box-shadow 0.25s;
         }
         .nav-link::after {
           content: '';
@@ -168,13 +171,25 @@ export default function Navbar() {
         }
 
         /* Glass mode (over hero) */
-        .glass-link { color: rgba(255,255,255,0.88); }
-        .glass-link:hover { color: #fff; }
+        .glass-link {
+          color: #fff;
+          background: rgba(255,255,255,0.14);
+          backdrop-filter: blur(4px);
+        }
+        .glass-link:hover {
+          color: #1a2a5e;
+          background: #d7c874;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+        }
         .glass-link::after { background: linear-gradient(90deg, rgba(255,255,255,0.6), #fff); }
 
         /* Solid mode (scrolled) */
-        .solid-link { color: #475569; }
-        .solid-link:hover { color: #2e3f8a; }
+        .solid-link { color: #2e3f8a; background: rgba(46,63,138,0.06); }
+        .solid-link:hover {
+          color: #1a2a5e;
+          background: #d7c874;
+          box-shadow: 0 4px 14px rgba(215,200,116,0.45);
+        }
         .solid-link::after { background: linear-gradient(90deg, #5b80d4, #2e3f8a); }
 
         /* ── Mobile links ─────────────────────────────────── */

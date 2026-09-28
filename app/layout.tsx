@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Hind } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,6 +7,19 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { JsonLd, SITE_URL, clinicaJsonLd, sitioWebJsonLd } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
+/**
+ * Tipografía de titulares. Leo pidió "Calcutta" (Indian Type Foundry), que no
+ * se distribuye por Google Fonts ni npm. Hind es de la misma fundición y es la
+ * familia sobre la que Calcutta está construida, así que sirve de base fiel.
+ * Para cambiar a Calcutta: sustituir por next/font/local apuntando a los
+ * .woff2 y mantener la variable --font-display.
+ */
+const display = Hind({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -77,7 +90,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es-CO" className={inter.variable}>
+    <html lang="es-CO" className={`${inter.variable} ${display.variable}`}>
       <body className="min-h-screen flex flex-col">
         <JsonLd data={clinicaJsonLd()} />
         <JsonLd data={sitioWebJsonLd()} />
