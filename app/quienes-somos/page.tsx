@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 const equipo = [
   {
     nombre: "Dr. Leonardo Orjuela Mariño",
+    perfil: "https://dr-leonardo-orjuela.vercel.app",
     titulo: "OD · Director Científico",
     inicial: "O",
     foto: "/equipo/leonardo-orjuela.jpg",
@@ -22,6 +23,7 @@ const equipo = [
   },
   {
     nombre: "Dra. Elizabeth Rueda",
+    perfil: "https://dra-elizabeth-rueda.vercel.app",
     titulo: "OD · Especialista en Optometría Pediátrica",
     inicial: "R",
     color: "from-[#0f766e] to-[#0d9488]",
@@ -30,6 +32,7 @@ const equipo = [
   },
   {
     nombre: "Dra. Laura Montoya",
+    perfil: "https://dra-laura-montoya.vercel.app",
     titulo: "OD · Ortóptica y Prótesis",
     inicial: "M",
     color: "from-[#5b21b6] to-[#7c3aed]",
@@ -242,6 +245,17 @@ export default function QuienesSomosPage() {
                     ))}
                   </ul>
                 </div>
+                {"perfil" in e && e.perfil && (
+                  <a
+                    href={e.perfil as string}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-shine inline-flex items-center gap-1.5 mt-5 border-2 border-[#d7c874] text-[#2e3f8a] px-5 py-2 rounded-full font-bold text-sm hover:bg-[#d7c874] transition-colors"
+                  >
+                    Ver perfil profesional
+                    <span aria-hidden="true">→</span>
+                  </a>
+                )}
               </div>
             ))}
           </div>
