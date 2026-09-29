@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 const servicios = [
   {
     id: "esclerales",
+    imagen: "/servicios/esclerales.jpg",
     titulo: "Lentes Esclerales",
     subtitulo: "El estándar de oro en contactología de alta complejidad",
     descripcion: `Los lentes esclerales son lentes de contacto rígidos de gran diámetro que descansan completamente sobre la esclerótica (la parte blanca del ojo), creando un espacio entre el lente y la córnea que se llena de solución salina.
@@ -57,6 +58,7 @@ El mecanismo principal es la inducción de un desenfoque miópico periférico re
   },
   {
     id: "rgp",
+    imagen: "/servicios/rgp.jpg",
     titulo: "Lentes RGP e Híbridos",
     subtitulo: "Óptica superior para casos de complejidad media",
     descripcion: `Los lentes de gas permeable rígido (RGP) son la tecnología de referencia para corrección de astigmatismo irregular. Gracias a su rigidez, crean una superficie de refracción perfectamente esférica sobre la córnea, compensando las irregularidades naturales.
@@ -75,6 +77,8 @@ Los lentes híbridos combinan un centro rígido (para óptica máxima) con una f
   },
   {
     id: "post-quirurgico",
+    imagen: "/servicios/post-quirurgico.jpg",
+    foco: "object-top",
     titulo: "Adaptación Post-Quirúrgica",
     subtitulo: "Cuando la cirugía no es el final del camino",
     descripcion: `Las cirugías refractivas (LASIK, PRK, LASEK) cambian la geometría de la córnea de manera permanente. En algunos casos, el resultado visual no es el esperado, o aparecen cambios con el tiempo que requieren corrección adicional.
@@ -94,6 +98,7 @@ Los implantes de lente intraocular (IOL multifocal, EDOF, tórico) también pued
   },
   {
     id: "ojo-seco",
+    imagen: "/servicios/ojo-seco.jpg",
     titulo: "Ojo Seco Severo y Superficie Ocular",
     subtitulo: "Más allá de las lágrimas artificiales",
     descripcion: `El ojo seco severo es una enfermedad crónica de la superficie ocular que no se resuelve con lágrimas artificiales. Ofrecemos un protocolo integral que combina el diagnóstico preciso de la causa (deficiencia acuosa, disfunción de glándula de Meibomio, inflamación), el tratamiento específico, y cuando es apropiado, la adaptación de lentes esclerales como dispositivo terapéutico.
@@ -112,6 +117,7 @@ Los lentes esclerales en ojo seco actúan como una cámara de humedad permanente
   },
   {
     id: "mediview",
+    imagen: "/servicios/mediview.jpg",
     titulo: "Imágenes MediView · Diagnóstico de Ojo Seco",
     subtitulo: "Valoración diagnóstica avanzada de superficie ocular y ojo seco",
     descripcion: `MediView es nuestra plataforma de imagen ocular de última generación que permite evaluar con precisión el estado de la superficie ocular, las glándulas de Meibomio y la película lagrimal. Es indispensable para el diagnóstico diferencial del ojo seco, la planificación de la adaptación de lentes de contacto especializados y el seguimiento del tratamiento.
@@ -134,6 +140,8 @@ Este servicio es ofrecido tanto por el área de optometría especializada para l
   },
   {
     id: "baja-vision",
+    imagen: "/servicios/baja-vision.jpg",
+    foco: "object-top",
     titulo: "Baja Visión",
     subtitulo: "Maximizando el potencial visual restante",
     descripcion: `La baja visión es la pérdida visual que no se puede corregir completamente con gafas, lentes de contacto o cirugía. Ofrecemos evaluación completa y prescripción de ayudas visuales ópticas y electrónicas para maximizar la funcionalidad visual de cada paciente.
@@ -205,7 +213,13 @@ export default function ServiciosPage() {
 
             {"imagen" in s && s.imagen && (
               <div className="relative w-full rounded-2xl overflow-hidden mb-6 border border-blue-100 shadow-sm" style={{ height: 240 }}>
-                <Image src={s.imagen as string} alt={s.titulo} fill className="object-cover" />
+                <Image
+                  src={s.imagen as string}
+                  alt={`${s.titulo} — ${s.subtitulo}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 720px"
+                  className={`object-cover ${("foco" in s && s.foco) || "object-center"}`}
+                />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1a2a5e]/30 to-transparent" />
               </div>
             )}
