@@ -19,7 +19,7 @@ const equipo = [
     foto: "/equipo/leonardo-orjuela.jpg",
     color: "from-[#2e3f8a] to-[#5b80d4]",
     especialidades: ["Contactología avanzada: esclerales, RGP, híbridos", "Lentes post-quirúrgicos", "Baja visión", "Queratocono y ectasias corneales"],
-    bio: "Con más de 30 años de experiencia, el Dr. Orjuela es uno de los referentes de contactología especializada en Colombia. Fundó el centro en 1992 con la visión de ofrecer soluciones a los casos que la optometría convencional no puede resolver. Ha adaptado lentes a miles de pacientes con queratocono, córneas irregulares y ojo seco severo.",
+    bio: "Con más de 30 años de experiencia, el Dr. Orjuela es uno de los referentes de contactología especializada en Colombia. Fundó el centro en 1995 con la visión de ofrecer soluciones a los casos que la optometría convencional no puede resolver. Ha adaptado lentes a miles de pacientes con queratocono, córneas irregulares y ojo seco severo.",
   },
   {
     nombre: "Dra. Elizabeth Rueda",
@@ -108,7 +108,7 @@ export default function QuienesSomosPage() {
             Especialistas en lo que otros no pueden resolver
           </h1>
           <p className="text-sky-100 text-lg leading-relaxed max-w-2xl mx-auto">
-            Desde 1992, en Medellín, atendemos a los pacientes que han agotado las opciones convencionales y buscan una solución real para su visión.
+            Desde 1995, en Medellín, atendemos a los pacientes que han agotado las opciones convencionales y buscan una solución real para su visión.
           </p>
         </div>
       </section>
@@ -125,7 +125,7 @@ export default function QuienesSomosPage() {
                   Lentes Especializados nació de una convicción: que los pacientes con condiciones visuales complejas merecen un lugar donde el &ldquo;no hay nada más que hacer&rdquo; no sea la respuesta.
                 </p>
                 <p>
-                  El Dr. Leonardo Orjuela fundó el centro en 1992, cuando los lentes esclerales y los RGP personalizados eran una rareza en Colombia. Desde entonces, el centro ha crecido hasta ser un equipo interdisciplinario que combina optometría clínica de alta complejidad con oftalmología especializada en superficie ocular.
+                  El Dr. Leonardo Orjuela fundó el centro en 1995, cuando los lentes esclerales y los RGP personalizados eran una rareza en Colombia. Desde entonces, el centro ha crecido hasta ser un equipo interdisciplinario que combina optometría clínica de alta complejidad con oftalmología especializada en superficie ocular.
                 </p>
                 <p>
                   Hoy contamos con tecnología de topografía corneal de última generación, imágenes de glándulas de Meibomio y el más amplio inventario de lentes especializados del país para adaptar a cada paciente la solución exacta que su córnea necesita.
@@ -134,7 +134,7 @@ export default function QuienesSomosPage() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { num: "1992", label: "Año de fundación",    color: "from-[#b45309] to-[#d97706]" },
+                { num: "1995", label: "Año de fundación",    color: "from-[#b45309] to-[#d97706]" },
                 { num: "+5.000", label: "Pacientes atendidos", color: "from-[#2e3f8a] to-[#5b80d4]" },
                 { num: "4",    label: "Especialistas",        color: "from-[#0f766e] to-[#0d9488]" },
                 { num: "+30",  label: "Años de experiencia",  color: "from-[#5b21b6] to-[#7c3aed]" },
