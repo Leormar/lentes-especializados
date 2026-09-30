@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { JsonLd, SITE_URL, clinicaJsonLd, sitioWebJsonLd } from "@/lib/seo";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -82,6 +83,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    // Código que entrega Google Search Console al verificar por etiqueta HTML.
+    // Se configura en Vercel como NEXT_PUBLIC_GOOGLE_VERIFICATION.
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
   category: "health",
   formatDetection: { telephone: true, address: true },
 };
@@ -92,6 +98,7 @@ export default function RootLayout({
   return (
     <html lang="es-CO" className={`${inter.variable} ${display.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <GoogleAnalytics />
         <JsonLd data={clinicaJsonLd()} />
         <JsonLd data={sitioWebJsonLd()} />
         <Navbar />
