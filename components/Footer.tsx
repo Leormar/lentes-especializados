@@ -109,6 +109,15 @@ export default function Footer() {
           <div className="flex gap-4 items-center">
             <a href="https://www.instagram.com/lentesdecontactomedellin/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
             <a href="https://share.google/fEwWsA3XU3lIVCjmE" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Google</a>
+            {/* Historia clínica de ortoqueratología: acceso restringido al equipo. */}
+            <a
+              href="https://orthok.lentesespecializados.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Seguimiento OrthoK
+            </a>
           </div>
         </div>
       </div>
