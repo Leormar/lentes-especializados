@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 const SUBSTACK_URL = "https://alamedida.substack.com";
 
 /**
  * Área del boletín "A la Medida", el Substack del Dr. Orjuela. Vive dentro de
  * /blog como el canal largo y periódico, al lado de los artículos clínicos del
- * sitio. Sin iconos: la jerarquía la llevan la tipografía y el color de marca
- * (ver "No usar iconos" en AGENTS.md).
+ * sitio. La portada es el logo real de la publicación (`public/a-la-medida-logo.png`,
+ * el mismo que Substack usa como og:image), no una ilustración inventada.
  */
 export default function ALaMedida() {
   return (
@@ -22,11 +24,10 @@ export default function ALaMedida() {
               A la Medida
             </h2>
             <p className="text-slate-600 leading-relaxed mb-6 max-w-prose">
-              El boletín del Dr. Leonardo Orjuela. Cada entrega toma un artículo
-              o un caso de contactología especializada y lo explica en español
-              claro: qué dice la evidencia, qué significa para el paciente y qué
-              cambia en la consulta. Lentes esclerales, queratocono, control de
-              miopía y superficie ocular.
+              Contactología especializada contada desde la consulta: lo clínico,
+              lo práctico y la gestión del consultorio. Por Leonardo Orjuela
+              Mariño, optómetra en Medellín, dedicado a lentes especializados
+              desde 1995.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -52,24 +53,25 @@ export default function ALaMedida() {
             </div>
           </div>
 
-          {/* Panel tipográfico: hace de portada sin recurrir a una ilustración. */}
-          <div className="rounded-2xl bg-[#2e3f8a] text-white p-8 text-center">
-            <p
-              className="text-5xl md:text-6xl font-bold leading-none mb-3"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              A la
-              <br />
-              Medida
+          {/* Portada: el logo de la publicación tal como aparece en Substack. */}
+          <a
+            href={SUBSTACK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center text-center"
+          >
+            <Image
+              src="/a-la-medida-logo.png"
+              alt="A la Medida — boletín de contactología especializada del Dr. Leonardo Orjuela"
+              width={512}
+              height={512}
+              sizes="(max-width: 768px) 70vw, 260px"
+              className="w-56 md:w-64 h-auto drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+            />
+            <p className="text-slate-400 text-xs mt-4 break-all group-hover:text-[#2e3f8a] transition-colors">
+              alamedida.substack.com
             </p>
-            <div className="w-12 h-1 bg-[#d7c874] mx-auto rounded-full mb-4" />
-            <p className="text-sky-200 text-sm leading-relaxed">
-              Contactología especializada,
-              <br />
-              una entrega a la vez.
-            </p>
-            <p className="text-sky-300/70 text-xs mt-4 break-all">alamedida.substack.com</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>
