@@ -18,7 +18,7 @@ export default function Home() {
 
 /* ──────────── Qué lente necesita ──────────── */
 const lensTypes = [
-  { id: "esclerales",       label: "Lentes Esclerales",    sub: "Córneas irregulares · Ojo seco severo",  foto: "/servicios/esclerales.jpg" },
+  { id: "esclerales",       label: "Lentes Esclerales",    sub: "Córneas irregulares · Ojo seco severo",  foto: "/servicios/mediview-escleral-fluoresceina.jpg" },
   { id: "orthokeratologia", label: "Ortoqueratología",     sub: "Visión sin gafas · Control miopía",      foto: "/servicios/orthokeratologia.jpg" },
   { id: "rgp",              label: "RGP / Híbridos",       sub: "Alta miopía · Astigmatismo irregular",   foto: "/servicios/rgp.jpg" },
   { id: "post-quirurgico",  label: "Post-Quirúrgico",      sub: "LASIK · Trasplante · IOL",               foto: "/servicios/post-quirurgico.jpg" },

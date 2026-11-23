@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { articulos } from "@/lib/articulos";
+import { articulos, type Articulo } from "@/lib/articulos";
+import ALaMedida from "@/components/ALaMedida";
 
 export const metadata: Metadata = {
   title: "Educación Visual — Queratocono y Lentes Especializados",
@@ -28,6 +29,8 @@ export default function BlogPage() {
           </p>
         </div>
       </section>
+
+      <ALaMedida />
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="flex gap-3 flex-wrap mb-10">
@@ -66,7 +69,7 @@ export default function BlogPage() {
             </div>
           </div>
           <div className="flex items-center justify-center">
-            <ArticuloIllustration categoria={destacado.categoria} />
+            <PortadaTipografica articulo={destacado} />
           </div>
         </Link>
 
@@ -113,15 +116,27 @@ export default function BlogPage() {
   );
 }
 
-function ArticuloIllustration({ categoria }: { categoria: string }) {
-  const color = categoria === "Condiciones" ? "#5b80d4" : categoria === "Lentes" ? "#7ba7f0" : "#2e3f8a";
+/**
+ * Portada del artículo destacado resuelta con tipografía y color de marca.
+ * No lleva ilustración ni icono (ver "No usar iconos" en AGENTS.md); cuando
+ * exista una foto clínica propia del tema, se reemplaza por esa foto.
+ */
+function PortadaTipografica({ articulo }: { articulo: Articulo }) {
   return (
-    <svg viewBox="0 0 200 200" className="w-40 h-40 opacity-80" fill="none">
-      <circle cx="100" cy="100" r="90" stroke={color} strokeWidth="2" strokeDasharray="6 4" />
-      <ellipse cx="100" cy="100" rx="70" ry="45" fill={color} fillOpacity="0.1" stroke={color} strokeWidth="2" />
-      <circle cx="100" cy="100" r="30" fill={color} fillOpacity="0.3" />
-      <circle cx="100" cy="100" r="15" fill={color} />
-      <circle cx="92" cy="92" r="5" fill="white" fillOpacity="0.5" />
-    </svg>
+    <div className="w-full rounded-2xl bg-[#2e3f8a] text-white p-8 text-center">
+      <p className="text-[#d7c874] font-black text-xs uppercase tracking-[0.18em] mb-4">
+        {articulo.categoria}
+      </p>
+      <p
+        className="text-3xl md:text-4xl font-bold leading-tight mb-5"
+        style={{ fontFamily: "var(--font-display)" }}
+      >
+        {articulo.titulo}
+      </p>
+      <div className="w-12 h-1 bg-[#d7c874] mx-auto rounded-full mb-4" />
+      <p className="text-sky-200 text-sm">
+        {articulo.autor} · {articulo.tiempo} de lectura
+      </p>
+    </div>
   );
 }

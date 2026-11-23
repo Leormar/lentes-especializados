@@ -8,6 +8,7 @@ const links = [
   { href: "/",              label: "Inicio" },
   { href: "/quienes-somos", label: "Nosotros" },
   { href: "/servicios",     label: "Servicios" },
+  { href: "/blog",          label: "Blog" },
   { href: "/educacion",     label: "Educación" },
   { href: "/contacto",      label: "Contáctenos" },
 ];
@@ -81,7 +82,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="cta-btn cta-solid"
-            style={{ animationDelay: "0.36s" }}
+            style={{ animationDelay: "0.53s" }}
           >
             <span className="shine-bar" aria-hidden="true" />
             <span className="relative z-10">Solicitar cita</span>
@@ -146,6 +147,7 @@ export default function Navbar() {
         .nav-link:nth-of-type(3) { animation-delay: 0.21s; }
         .nav-link:nth-of-type(4) { animation-delay: 0.29s; }
         .nav-link:nth-of-type(5) { animation-delay: 0.37s; }
+        .nav-link:nth-of-type(6) { animation-delay: 0.45s; }
 
         @keyframes link-hop {
           0%   { transform: translateY(0) scale(1) rotate(0deg); }

@@ -100,6 +100,15 @@ export default function Footer() {
               </p>
             </div>
           </a>
+          <a
+            href="https://alamedida.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block border-2 border-[#d7c874]/60 hover:border-[#d7c874] hover:bg-[#d7c874]/10 rounded-xl p-3 mt-3 transition-colors"
+          >
+            <p className="font-bold text-sm leading-tight">A la Medida</p>
+            <p className="text-white/70 text-xs">Nuestro boletín en Substack</p>
+          </a>
         </div>
       </div>
 
@@ -109,6 +118,8 @@ export default function Footer() {
           <div className="flex gap-4 items-center">
             <a href="https://www.instagram.com/lentesdecontactomedellin/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
             <a href="https://share.google/fEwWsA3XU3lIVCjmE" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Google</a>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <a href="https://alamedida.substack.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">A la Medida</a>
             {/* Historia clínica de ortoqueratología: acceso restringido al equipo. */}
             <a
               href="https://orthok.lentesespecializados.com"

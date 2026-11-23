@@ -32,6 +32,8 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# .env.example no lleva secretos: es la plantilla de variables del proyecto.
+!.env.example
 
 # vercel
 .vercel

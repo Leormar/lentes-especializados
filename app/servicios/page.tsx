@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const servicios = [
   {
     id: "esclerales",
-    imagen: "/servicios/esclerales.jpg",
+    imagen: "/servicios/mediview-escleral-fluoresceina.jpg",
     titulo: "Lentes Esclerales",
     subtitulo: "El estándar de oro en contactología de alta complejidad",
     descripcion: `Los lentes esclerales son lentes de contacto rígidos de gran diámetro que descansan completamente sobre la esclerótica (la parte blanca del ojo), creando un espacio entre el lente y la córnea que se llena de solución salina.
@@ -98,7 +98,7 @@ Los implantes de lente intraocular (IOL multifocal, EDOF, tórico) también pued
   },
   {
     id: "ojo-seco",
-    imagen: "/servicios/ojo-seco.jpg",
+    imagen: "/servicios/mediview-superficie-ocular.jpg",
     titulo: "Ojo Seco Severo y Superficie Ocular",
     subtitulo: "Más allá de las lágrimas artificiales",
     descripcion: `El ojo seco severo es una enfermedad crónica de la superficie ocular que no se resuelve con lágrimas artificiales. Ofrecemos un protocolo integral que combina el diagnóstico preciso de la causa (deficiencia acuosa, disfunción de glándula de Meibomio, inflamación), el tratamiento específico, y cuando es apropiado, la adaptación de lentes esclerales como dispositivo terapéutico.
@@ -117,7 +117,7 @@ Los lentes esclerales en ojo seco actúan como una cámara de humedad permanente
   },
   {
     id: "mediview",
-    imagen: "/servicios/mediview.jpg",
+    imagen: "/servicios/mediview-corte-optico.jpg",
     titulo: "Imágenes MediView · Diagnóstico de Ojo Seco",
     subtitulo: "Valoración diagnóstica avanzada de superficie ocular y ojo seco",
     descripcion: `MediView es nuestra plataforma de imagen ocular de última generación que permite evaluar con precisión el estado de la superficie ocular, las glándulas de Meibomio y la película lagrimal. Es indispensable para el diagnóstico diferencial del ojo seco, la planificación de la adaptación de lentes de contacto especializados y el seguimiento del tratamiento.
