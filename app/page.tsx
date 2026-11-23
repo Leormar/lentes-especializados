@@ -3,6 +3,7 @@ import Image from "next/image";
 import Carrusel from "@/components/Carrusel";
 import SelectorInteractivo from "@/components/SelectorInteractivo";
 import ReseñasSection from "@/components/ReseñasSection";
+import ALaMedida from "@/components/ALaMedida";
 import SectionBadge from "@/components/SectionBadge";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Carrusel />
       <LentesSection />
       <ReseñasSection />
+      <ALaMedida limite={3} />
       <MapaSection />
     </>
   );

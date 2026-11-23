@@ -1,17 +1,25 @@
 import Image from "next/image";
+import { obtenerPostsSubstack, type PostSubstack } from "@/lib/substack";
 
 const SUBSTACK_URL = "https://alamedida.substack.com";
 
 /**
- * Área del boletín "A la Medida", el Substack del Dr. Orjuela. Vive dentro de
- * /blog como el canal largo y periódico, al lado de los artículos clínicos del
- * sitio. La portada es el logo real de la publicación (`public/a-la-medida-logo.png`,
- * el mismo que Substack usa como og:image), no una ilustración inventada.
+ * Área del boletín "A la Medida", el Substack del Dr. Orjuela. Aparece en la
+ * home (debajo de las reseñas) y en /blog, donde hace de canal largo y
+ * periódico al lado de los artículos clínicos del sitio.
+ *
+ * Las entradas se leen del RSS público de Substack y se pintan como bloques
+ * con su propia portada, igual que en la publicación. Si el feed falla, el
+ * área se queda con la presentación y los botones, sin romperse.
  */
-export default function ALaMedida() {
+export default async function ALaMedida({ limite = 6 }: { limite?: number }) {
+  const posts = await obtenerPostsSubstack(limite);
+
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-12">
-      <div className="relative overflow-hidden rounded-2xl border-2 border-[#d7c874]/50 bg-gradient-to-br from-[#f0f9ff] to-white p-8 md:p-10">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-14">
+      <div className="rounded-2xl border-2 border-[#d7c874]/50 bg-gradient-to-br from-[#f0f9ff] to-white p-8 md:p-10">
+
+        {/* Presentación */}
         <div className="grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-10 items-center">
           <div>
             <p className="text-[#5b80d4] font-black text-xs uppercase tracking-[0.18em] mb-3">
@@ -65,15 +73,86 @@ export default function ALaMedida() {
               alt="A la Medida — boletín de contactología especializada del Dr. Leonardo Orjuela"
               width={512}
               height={512}
-              sizes="(max-width: 768px) 70vw, 260px"
-              className="w-56 md:w-64 h-auto drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 60vw, 240px"
+              className="w-48 md:w-56 h-auto drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
             />
             <p className="text-slate-400 text-xs mt-4 break-all group-hover:text-[#2e3f8a] transition-colors">
               alamedida.substack.com
             </p>
           </a>
         </div>
+
+        {/* Entradas publicadas, cada una con su portada */}
+        {posts.length > 0 && (
+          <>
+            <div className="border-t border-slate-200/80 mt-10 mb-8" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {posts.map((p) => (
+                <BloquePost key={p.url} post={p} />
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <a
+                href={`${SUBSTACK_URL}/archive`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#2e3f8a] font-bold text-sm hover:text-[#5b80d4] transition-colors"
+              >
+                Ver todas las entradas en Substack
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </>
+        )}
       </div>
     </section>
+  );
+}
+
+function BloquePost({ post }: { post: PostSubstack }) {
+  return (
+    <a
+      href={post.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col rounded-xl overflow-hidden bg-white border border-slate-200 hover:border-[#5b80d4] hover:shadow-lg transition-all"
+    >
+      {post.imagen && (
+        <div className="relative aspect-[16/9] bg-slate-100 overflow-hidden">
+          <Image
+            src={post.imagen}
+            alt=""
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      )}
+
+      <div className="flex flex-col flex-1 p-5">
+        <h3 className="font-bold text-[#2e3f8a] leading-snug mb-2 line-clamp-2 group-hover:text-[#5b80d4] transition-colors">
+          {post.titulo}
+        </h3>
+        <p className="text-slate-500 text-sm leading-relaxed line-clamp-3 flex-1">
+          {post.resumen}
+        </p>
+        {post.fecha && (
+          <time
+            dateTime={post.fecha}
+            className="text-xs text-slate-400 mt-4 pt-3 border-t border-slate-100"
+          >
+            {new Date(post.fecha).toLocaleDateString("es-CO", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+        )}
+      </div>
+    </a>
   );
 }

@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      // Portadas de las entradas de A la Medida, servidas por Substack.
+      {
+        protocol: "https",
+        hostname: "substackcdn.com",
+        port: "",
+        pathname: "/image/**",
+      },
     ],
   },
 };
