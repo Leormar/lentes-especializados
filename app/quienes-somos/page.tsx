@@ -214,24 +214,24 @@ export default function QuienesSomosPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {equipo.map((e) => (
               <div key={e.nombre} className="bg-white rounded-2xl p-7 border-2 border-[#d7c874]/20 shadow-sm hover:border-[#d7c874]/60 transition-colors">
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-5 mb-5">
                   {"foto" in e && e.foto ? (
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden shrink-0 shadow-md ring-2 ring-[#d7c874]/40">
+                    <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shrink-0 shadow-lg ring-4 ring-[#d7c874]/40">
                       <Image
                         src={e.foto as string}
                         alt={e.nombre}
                         fill
-                        sizes="56px"
+                        sizes="(max-width: 640px) 112px, 128px"
                         className="object-cover"
                       />
                     </div>
                   ) : (
-                    <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${e.color} flex items-center justify-center text-white font-black text-xl shrink-0 shadow-md`}>
+                    <div className={`w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br ${e.color} flex items-center justify-center text-white font-black text-4xl shrink-0 shadow-lg ring-4 ring-[#d7c874]/40`}>
                       {e.inicial}
                     </div>
                   )}
                   <div>
-                    <h3 className="font-bold text-[#2e3f8a] text-lg leading-snug">{e.nombre}</h3>
+                    <h3 className="font-bold text-[#2e3f8a] text-xl leading-snug">{e.nombre}</h3>
                     <p className="text-[#5b80d4] text-sm font-semibold">{e.titulo}</p>
                   </div>
                 </div>

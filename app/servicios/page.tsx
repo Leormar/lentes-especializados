@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const servicios = [
   {
     id: "esclerales",
-    imagen: "/servicios/escleral-adaptado.jpg",
+    imagenes: ["/servicios/escleral-adaptado.jpg"],
     titulo: "Lentes Esclerales",
     subtitulo: "El estándar de oro en contactología de alta complejidad",
     descripcion: `Los lentes esclerales son lentes de contacto rígidos de gran diámetro que descansan completamente sobre la esclerótica (la parte blanca del ojo), creando un espacio entre el lente y la córnea que se llena de solución salina.
@@ -32,8 +32,7 @@ Este diseño único ofrece ventajas extraordinarias para casos complejos: la có
   },
   {
     id: "orthokeratologia",
-    imagen: "/servicios/orthok-comparativa.jpg",
-    imagenExtra: "/servicios/orthok-diana.jpg",
+    imagenes: ["/servicios/orthok-comparativa.jpg", "/servicios/orthok-diana.jpg"],
     titulo: "Ortoqueratología · Control de Miopía",
     subtitulo: "Lentes nocturnos que corrigen la miopía mientras duerme — sin gafas ni lentes durante el día",
     descripcion: `La ortoqueratología (Ortho-K) utiliza lentes de contacto rígidos gas-permeables de geometría inversa, diseñados para usarse exclusivamente durante el sueño. Mientras el paciente duerme, el lente remodela de forma suave y controlada el epitelio corneal central: aplana la zona óptica y genera una zona periférica de tratamiento. Al retirar el lente en la mañana, la córnea mantiene temporalmente esa nueva forma y el paciente puede ver con claridad durante todo el día sin necesidad de gafas ni lentes de contacto blandos.
@@ -59,7 +58,7 @@ El mecanismo principal es la inducción de un desenfoque miópico periférico re
   },
   {
     id: "rgp",
-    imagen: "/servicios/rgp.jpg",
+    imagenes: ["/servicios/rgp.jpg"],
     titulo: "Lentes RGP e Híbridos",
     subtitulo: "Óptica superior para casos de complejidad media",
     descripcion: `Los lentes de gas permeable rígido (RGP) son la tecnología de referencia para corrección de astigmatismo irregular. Gracias a su rigidez, crean una superficie de refracción perfectamente esférica sobre la córnea, compensando las irregularidades naturales.
@@ -78,8 +77,7 @@ Los lentes híbridos combinan un centro rígido (para óptica máxima) con una f
   },
   {
     id: "post-quirurgico",
-    imagen: "/servicios/post-quirurgico-cicatrices.jpg",
-    imagenExtra: "/servicios/post-quirurgico-escleral.jpg",
+    imagenes: ["/servicios/post-quirurgico-cicatrices.jpg", "/servicios/post-quirurgico-escleral.jpg"],
     titulo: "Adaptación Post-Quirúrgica",
     subtitulo: "Cuando la cirugía no es el final del camino",
     descripcion: `Las cirugías refractivas (LASIK, PRK, LASEK) cambian la geometría de la córnea de manera permanente. En algunos casos, el resultado visual no es el esperado, o aparecen cambios con el tiempo que requieren corrección adicional.
@@ -99,8 +97,7 @@ Los implantes de lente intraocular (IOL multifocal, EDOF, tórico) también pued
   },
   {
     id: "ojo-seco",
-    imagen: "/servicios/ojo-seco-tincion.jpg",
-    imagenExtra: "/servicios/ojo-seco-tincion-detalle.jpg",
+    imagenes: ["/servicios/ojo-seco-tincion.jpg", "/servicios/ojo-seco-tincion-detalle.jpg"],
     titulo: "Ojo Seco Severo y Superficie Ocular",
     subtitulo: "Más allá de las lágrimas artificiales",
     descripcion: `El ojo seco severo es una enfermedad crónica de la superficie ocular que no se resuelve con lágrimas artificiales. Ofrecemos un protocolo integral que combina el diagnóstico preciso de la causa (deficiencia acuosa, disfunción de glándula de Meibomio, inflamación), el tratamiento específico, y cuando es apropiado, la adaptación de lentes esclerales como dispositivo terapéutico.
@@ -119,8 +116,11 @@ Los lentes esclerales en ojo seco actúan como una cámara de humedad permanente
   },
   {
     id: "mediview",
-    imagen: "/servicios/mediview-meibografia.jpg",
-    imagenExtra: "/servicios/mediview-tincion-superficie.jpg",
+    imagenes: [
+      "/servicios/mediview.jpg",
+      "/servicios/mediview-meibografia.jpg",
+      "/servicios/mediview-tincion-superficie.jpg",
+    ],
     titulo: "Imágenes MediView · Diagnóstico de Ojo Seco",
     subtitulo: "Valoración diagnóstica avanzada de superficie ocular y ojo seco",
     descripcion: `MediView es nuestra plataforma de imagen ocular de última generación que permite evaluar con precisión el estado de la superficie ocular, las glándulas de Meibomio y la película lagrimal. Es indispensable para el diagnóstico diferencial del ojo seco, la planificación de la adaptación de lentes de contacto especializados y el seguimiento del tratamiento.
@@ -143,7 +143,7 @@ Este servicio es ofrecido tanto por el área de optometría especializada para l
   },
   {
     id: "baja-vision",
-    imagen: "/servicios/baja-vision.jpg",
+    imagenes: ["/servicios/baja-vision.jpg"],
     foco: "object-top",
     titulo: "Baja Visión",
     subtitulo: "Maximizando el potencial visual restante",
@@ -214,31 +214,39 @@ export default function ServiciosPage() {
               </div>
             </div>
 
-            {"imagen" in s && s.imagen && (() => {
-              // Algunos servicios llevan dos fotos; entonces van en pareja y
-              // cada una ocupa la mitad del ancho, lo que cambia el `sizes`.
-              const fotos = [
-                s.imagen as string,
-                ("imagenExtra" in s ? s.imagenExtra : null) as string | null,
-              ].filter((src): src is string => Boolean(src));
-              const pareja = fotos.length > 1;
+            {"imagenes" in s && s.imagenes.length > 0 && (() => {
+              const fotos = s.imagenes as readonly string[];
+              // Las fotos ocupan al menos la mitad de la sección: una sola va a
+              // lo ancho y bien alta; dos o tres se reparten el ancho sin
+              // encogerse demasiado.
+              const rejilla =
+                fotos.length === 1 ? "" :
+                fotos.length === 2 ? "grid gap-4 sm:grid-cols-2" :
+                                     "grid gap-4 sm:grid-cols-2 lg:grid-cols-3";
+              const alto =
+                fotos.length === 1 ? "h-[300px] sm:h-[420px]" :
+                fotos.length === 2 ? "h-[260px] sm:h-[340px]" :
+                                     "h-[240px] sm:h-[300px]";
+              const medida =
+                fotos.length === 1 ? "(max-width: 768px) 100vw, 720px" :
+                fotos.length === 2 ? "(max-width: 640px) 100vw, 360px" :
+                                     "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 240px";
 
               return (
-                <div className={`mb-6 ${pareja ? "grid gap-4 sm:grid-cols-2" : ""}`}>
+                <div className={`mb-8 ${rejilla}`}>
                   {fotos.map((src) => (
                     <div
                       key={src}
-                      className="relative w-full rounded-2xl overflow-hidden border border-blue-100 shadow-sm"
-                      style={{ height: 240 }}
+                      className={`relative w-full ${alto} rounded-2xl overflow-hidden border border-blue-100 shadow-sm`}
                     >
                       <Image
                         src={src}
                         alt={`${s.titulo} — ${s.subtitulo}`}
                         fill
-                        sizes={pareja ? "(max-width: 640px) 100vw, 360px" : "(max-width: 768px) 100vw, 720px"}
+                        sizes={medida}
                         className={`object-cover ${("foco" in s && s.foco) || "object-center"}`}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#1a2a5e]/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#1a2a5e]/25 to-transparent" />
                     </div>
                   ))}
                 </div>
