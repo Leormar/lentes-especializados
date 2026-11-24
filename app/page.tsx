@@ -145,7 +145,7 @@ function MapaSection() {
             </div>
             <div className="text-sm">
               <p className="font-bold text-[#2e3f8a] mb-1">Horario</p>
-              <p className="text-slate-600 leading-snug">Lunes a viernes<br />7:30 am – 5:30 pm</p>
+              <p className="text-slate-600 leading-snug">Lunes a viernes<br />8:00 am – 5:00 pm</p>
             </div>
           </div>
 

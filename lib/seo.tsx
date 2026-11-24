@@ -71,8 +71,8 @@ export function clinicaJsonLd() {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:30",
-        closes: "17:30",
+        opens: "08:00",
+        closes: "17:00",
       },
     ],
     medicalSpecialty: "Optometric",

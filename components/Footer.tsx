@@ -58,7 +58,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-sky-200">
             <li>Torre Médica Ciudad del Río</li>
             <li>Piso 16 · Of. 1628 · Medellín</li>
-            <li>Lun–Vie · 7:30 am – 5:30 pm</li>
+            <li>Lun–Vie · 8:00 am – 5:00 pm</li>
             <li>
               <a href="https://wa.me/573113154316" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                 +57 311 315 4316

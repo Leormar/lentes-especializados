@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const horarios = [
-  { dia: "Lunes a viernes", hora: "7:30 am – 5:30 pm" },
+  { dia: "Lunes a viernes", hora: "8:00 am – 5:00 pm" },
   { dia: "Sábados", hora: "Ocasionales — confirmar por WhatsApp" },
   { dia: "Domingos y festivos", hora: "Cerrado" },
 ];
