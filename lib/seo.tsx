@@ -9,6 +9,12 @@ export const NEGOCIO = {
   telefonoE164: "+573113154316",
   email: "info@lentesespecializados.com",
   edificio: "Torre Médica Ciudad del Río",
+  calle: "Cra. 48 #19A-40, oficina 1628",
+  barrio: "El Poblado",
+  codigoPostal: "050021",
+  // Coordenadas tomadas de la propia ficha de Google Business Profile.
+  lat: 6.223214,
+  lng: -75.574883,
   ciudad: "Medellín",
   region: "Antioquia",
   pais: "CO",
@@ -17,8 +23,8 @@ export const NEGOCIO = {
 
 /**
  * MedicalClinic: hereda de MedicalBusiness y LocalBusiness, que es lo que Google
- * usa para el panel local. No incluimos aggregateRating ni geo porque no tenemos
- * datos verificables; inventarlos viola las directrices de datos estructurados.
+ * usa para el panel local. Las coordenadas salen de la propia ficha de Google.
+ * NO incluimos aggregateRating: Google prohíbe marcar reseñas tomadas de Google.
  */
 export function clinicaJsonLd() {
   return {
@@ -38,10 +44,24 @@ export function clinicaJsonLd() {
     address: {
       "@type": "PostalAddress",
       name: NEGOCIO.edificio,
+      streetAddress: NEGOCIO.calle,
       addressLocality: NEGOCIO.ciudad,
       addressRegion: NEGOCIO.region,
+      postalCode: NEGOCIO.codigoPostal,
       addressCountry: NEGOCIO.pais,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: NEGOCIO.lat,
+      longitude: NEGOCIO.lng,
+    },
+    hasMap: "https://maps.google.com/?cid=1053652486976924781",
+    // Perfiles oficiales: ayudan a Google a unir la web con la ficha local.
+    sameAs: [
+      "https://www.instagram.com/lentesdecontactomedellin/",
+      "https://alamedida.substack.com",
+      "https://maps.google.com/?cid=1053652486976924781",
+    ],
     areaServed: [
       { "@type": "City", name: "Medellín" },
       { "@type": "AdministrativeArea", name: "Antioquia" },
