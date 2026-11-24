@@ -116,7 +116,7 @@ Los lentes esclerales en ojo seco actúan como una cámara de humedad permanente
   },
   {
     id: "mediview",
-    imagenes: ["/servicios/mediview-od-superficie.jpg"],
+    imagenes: ["/servicios/mediview-equipo.jpg"],
     video: {
       src: "/servicios/mediview-nibut.mp4",
       poster: "/servicios/mediview-nibut-poster.jpg",
