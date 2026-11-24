@@ -119,7 +119,8 @@ Los lentes esclerales en ojo seco actúan como una cámara de humedad permanente
   },
   {
     id: "mediview",
-    imagen: "/servicios/mediview-corte-optico.jpg",
+    imagen: "/servicios/mediview-meibografia.jpg",
+    imagenExtra: "/servicios/mediview-tincion-superficie.jpg",
     titulo: "Imágenes MediView · Diagnóstico de Ojo Seco",
     subtitulo: "Valoración diagnóstica avanzada de superficie ocular y ojo seco",
     descripcion: `MediView es nuestra plataforma de imagen ocular de última generación que permite evaluar con precisión el estado de la superficie ocular, las glándulas de Meibomio y la película lagrimal. Es indispensable para el diagnóstico diferencial del ojo seco, la planificación de la adaptación de lentes de contacto especializados y el seguimiento del tratamiento.
