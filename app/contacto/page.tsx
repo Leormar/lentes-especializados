@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import MapaUbicacion from "@/components/MapaUbicacion";
+import { NEGOCIO } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Agende su consulta en Medellín",
@@ -77,9 +79,10 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-[#2e3f8a]">Ubicación</p>
-                  <p className="text-slate-600">Torre Médica Ciudad del Río</p>
-                  <p className="text-slate-600">Medellín, Colombia</p>
-                  <p className="text-xs text-slate-400 mt-0.5">La dirección exacta y opciones de parqueo se confirman al agendar.</p>
+                  <p className="text-slate-600">{NEGOCIO.edificio}</p>
+                  <p className="text-slate-600">{NEGOCIO.calle}</p>
+                  <p className="text-slate-600">{NEGOCIO.barrio}, {NEGOCIO.ciudad}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Las opciones de parqueo se confirman al agendar.</p>
                 </div>
               </div>
             </div>
@@ -117,6 +120,11 @@ export default function ContactoPage() {
           <h2 className="text-2xl font-bold text-[#2e3f8a] mb-6">Envíenos un mensaje</h2>
           <ContactForm />
         </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-20">
+        <h2 className="text-2xl font-bold text-[#2e3f8a] mb-6">Cómo llegar</h2>
+        <MapaUbicacion alto={440} />
       </section>
     </>
   );

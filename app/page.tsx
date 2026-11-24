@@ -5,6 +5,7 @@ import SelectorInteractivo from "@/components/SelectorInteractivo";
 import ReseñasSection from "@/components/ReseñasSection";
 import ALaMedida from "@/components/ALaMedida";
 import SectionBadge from "@/components/SectionBadge";
+import MapaUbicacion from "@/components/MapaUbicacion";
 
 export default function Home() {
   return (
@@ -114,17 +115,8 @@ function MapaSection() {
         <div className="w-16 h-1 bg-[#d7c874] mx-auto rounded-full" />
       </div>
 
-      <div className="w-full" style={{ height: "clamp(260px, 45vw, 480px)" }}>
-        <iframe
-          src="https://maps.google.com/maps?q=Torre+M%C3%A9dica+Ciudad+del+R%C3%ADo+Medell%C3%ADn+Colombia&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0, display: "block" }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Ubicación PROLENS – Torre Médica Ciudad del Río"
-        />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <MapaUbicacion alto={420} />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8">
