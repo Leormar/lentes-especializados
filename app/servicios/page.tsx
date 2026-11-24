@@ -58,7 +58,11 @@ El mecanismo principal es la inducción de un desenfoque miópico periférico re
   },
   {
     id: "rgp",
-    imagenes: ["/servicios/rgp.jpg"],
+    imagenes: [
+      "/servicios/rgp.jpg",
+      "/servicios/rgp-lente-adaptado.jpg",
+      "/servicios/rgp-borde-limbo.jpg",
+    ],
     titulo: "Lentes RGP e Híbridos",
     subtitulo: "Óptica superior para casos de complejidad media",
     descripcion: `Los lentes de gas permeable rígido (RGP) son la tecnología de referencia para corrección de astigmatismo irregular. Gracias a su rigidez, crean una superficie de refracción perfectamente esférica sobre la córnea, compensando las irregularidades naturales.
