@@ -47,7 +47,7 @@ const pasos: Paso[] = [
 /* Foto real del servicio recomendado — reemplaza el icono genérico */
 const FOTO_SERVICIO: Record<string, string> = {
   esclerales: "/servicios/escleral-adaptado.jpg",
-  "post-quirurgico": "/servicios/post-quirurgico.jpg",
+  "post-quirurgico": "/servicios/post-quirurgico-cicatrices.jpg",
   "ojo-seco": "/servicios/ojo-seco.jpg",
 };
 

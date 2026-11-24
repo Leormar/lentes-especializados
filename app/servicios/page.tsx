@@ -78,8 +78,8 @@ Los lentes híbridos combinan un centro rígido (para óptica máxima) con una f
   },
   {
     id: "post-quirurgico",
-    imagen: "/servicios/post-quirurgico.jpg",
-    foco: "object-top",
+    imagen: "/servicios/post-quirurgico-cicatrices.jpg",
+    imagenExtra: "/servicios/post-quirurgico-escleral.jpg",
     titulo: "Adaptación Post-Quirúrgica",
     subtitulo: "Cuando la cirugía no es el final del camino",
     descripcion: `Las cirugías refractivas (LASIK, PRK, LASEK) cambian la geometría de la córnea de manera permanente. En algunos casos, el resultado visual no es el esperado, o aparecen cambios con el tiempo que requieren corrección adicional.

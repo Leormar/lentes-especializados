@@ -23,7 +23,7 @@ const lensTypes = [
   { id: "esclerales",       label: "Lentes Esclerales",    sub: "Córneas irregulares · Ojo seco severo",  foto: "/servicios/escleral-adaptado.jpg" },
   { id: "orthokeratologia", label: "Ortoqueratología",     sub: "Visión sin gafas · Control miopía",      foto: "/servicios/orthok-diana.jpg" },
   { id: "rgp",              label: "RGP / Híbridos",       sub: "Alta miopía · Astigmatismo irregular",   foto: "/servicios/rgp.jpg" },
-  { id: "post-quirurgico",  label: "Post-Quirúrgico",      sub: "LASIK · Trasplante · IOL",               foto: "/servicios/post-quirurgico.jpg" },
+  { id: "post-quirurgico",  label: "Post-Quirúrgico",      sub: "LASIK · Trasplante · IOL",               foto: "/servicios/post-quirurgico-cicatrices.jpg" },
   { id: "ojo-seco",         label: "Ojo Seco Severo",      sub: "Diagnóstico y tratamiento integral",     foto: "/servicios/ojo-seco.jpg" },
   { id: "mediview",         label: "Imágenes MediView",    sub: "Diagnóstico de superficie ocular",       foto: "/servicios/mediview.jpg" },
 ];
