@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import ServiciosPestanas, { type Servicio } from "@/components/ServiciosPestanas";
 
 export const metadata: Metadata = {
   title: "Lentes Esclerales, RGP e Híbridos en Medellín",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/servicios" },
 };
 
-const servicios = [
+const servicios: Servicio[] = [
   {
     id: "esclerales",
     imagenes: ["/servicios/escleral-adaptado.jpg"],
@@ -226,167 +226,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      <nav className="bg-white sticky top-28 z-40 border-b border-sky-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex gap-6 overflow-x-auto py-3 text-sm scrollbar-hide">
-            {servicios.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                className="text-slate-600 hover:text-[#2e3f8a] font-medium whitespace-nowrap transition-colors"
-              >
-                {s.titulo}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 space-y-24">
-        {servicios.map((s, i) => (
-          <section key={s.id} id={s.id} className="scroll-mt-28">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-5xl font-black text-sky-100 select-none leading-none">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#2e3f8a]">{s.titulo}</h2>
-                <p className="text-[#5b80d4] font-medium">{s.subtitulo}</p>
-              </div>
-            </div>
-
-            {"imagenes" in s && s.imagenes.length > 0 && (() => {
-              const fotos = s.imagenes as readonly string[];
-              // Las fotos ocupan al menos la mitad de la sección: una sola va a
-              // lo ancho y bien alta; dos o tres se reparten el ancho sin
-              // encogerse demasiado.
-              const rejilla =
-                fotos.length === 1 ? "" :
-                fotos.length === 2 ? "grid gap-4 sm:grid-cols-2" :
-                                     "grid gap-4 sm:grid-cols-2 lg:grid-cols-3";
-              const alto =
-                fotos.length === 1 ? "h-[300px] sm:h-[420px]" :
-                fotos.length === 2 ? "h-[260px] sm:h-[340px]" :
-                                     "h-[240px] sm:h-[300px]";
-              const medida =
-                fotos.length === 1 ? "(max-width: 768px) 100vw, 720px" :
-                fotos.length === 2 ? "(max-width: 640px) 100vw, 360px" :
-                                     "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 240px";
-
-              return (
-                <div className={`mb-8 ${rejilla}`}>
-                  {fotos.map((src) => (
-                    <div
-                      key={src}
-                      className={`relative w-full ${alto} rounded-2xl overflow-hidden border border-blue-100 shadow-sm`}
-                    >
-                      <Image
-                        src={src}
-                        alt={`${s.titulo} — ${s.subtitulo}`}
-                        fill
-                        sizes={medida}
-                        className={`object-cover ${("foco" in s && s.foco) || "object-center"}`}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#1a2a5e]/25 to-transparent" />
-                    </div>
-                  ))}
-                </div>
-              );
-            })()}
-
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="md:col-span-2 space-y-4">
-                {s.descripcion.split("\n\n").map((p, j) => (
-                  <p key={j} className="text-slate-600 leading-relaxed">{p}</p>
-                ))}
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-[#f0f9ff] rounded-2xl p-5 border border-sky-100">
-                  <p className="text-xs font-semibold text-[#5b80d4] uppercase tracking-wide mb-3">Indicaciones</p>
-                  <ul className="space-y-2">
-                    {s.indicaciones.map((ind) => (
-                      <li key={ind} className="flex items-start gap-2 text-sm text-slate-700">
-                        <span className="text-[#5b80d4] mt-0.5 shrink-0">✓</span>
-                        {ind}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-[#2e3f8a] text-white rounded-2xl p-5">
-                  <p className="text-xs font-semibold text-sky-300 uppercase tracking-wide mb-1">Inversión aproximada</p>
-                  <p className="font-bold text-lg mb-1">{s.precio}</p>
-                  <p className="text-sky-200 text-xs leading-relaxed">{s.nota}</p>
-                  <a
-                    href={`https://wa.me/573113154316?text=Hola,%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(s.titulo)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-shine mt-4 block text-center bg-[#25D366] text-white px-4 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b858] transition-colors"
-                  >
-                    Agendar consulta
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {"video" in s && s.video && (
-              <figure className="mt-12 rounded-2xl overflow-hidden border border-blue-100 shadow-sm bg-white">
-                {/* Vídeo mudo y sin autoplay: el paciente decide verlo. */}
-                <video
-                  className="w-full block bg-[#1b1d21]"
-                  src={s.video.src}
-                  poster={s.video.poster}
-                  controls
-                  muted
-                  playsInline
-                  preload="none"
-                />
-                <figcaption className="px-5 py-4 text-sm text-slate-600 leading-relaxed">
-                  {s.video.pie}
-                </figcaption>
-              </figure>
-            )}
-
-            {"galeria" in s && s.galeria && (
-              <div className="mt-12">
-                <h3 className="text-xl font-bold text-[#2e3f8a] mb-2">
-                  Exámenes reales tomados en el consultorio
-                </h3>
-                <p className="text-slate-500 text-sm mb-6 max-w-2xl leading-relaxed">
-                  Todas estas imágenes salen de nuestro propio equipo MediView. Así se ve
-                  cada examen y esto es lo que mide.
-                </p>
-                <div className="grid gap-6 sm:grid-cols-2">
-                  {s.galeria.map((g) => (
-                    <figure
-                      key={g.src}
-                      className="rounded-2xl overflow-hidden border border-blue-100 shadow-sm bg-white"
-                    >
-                      <div className="relative w-full aspect-[16/10] bg-[#1b1d21]">
-                        <Image
-                          src={g.src}
-                          alt={g.pie}
-                          fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 460px"
-                          className="object-contain"
-                        />
-                      </div>
-                      <figcaption className="px-5 py-4 text-sm text-slate-600 leading-relaxed">
-                        {g.pie}
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {i < servicios.length - 1 && (
-              <div className="mt-16 border-b border-sky-100" />
-            )}
-          </section>
-        ))}
-      </div>
+      <ServiciosPestanas servicios={servicios} />
 
       <section className="bg-[#f0f9ff] py-16 text-center">
         <div className="max-w-xl mx-auto px-4">
