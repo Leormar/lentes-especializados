@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/contacto`, lastModified: ahora, changeFrequency: "yearly", priority: 0.8 },
     { url: `${SITE_URL}/blog`, lastModified: ahora, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/quienes-somos`, lastModified: ahora, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${SITE_URL}/politica-de-datos`, lastModified: ahora, changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const posts: MetadataRoute.Sitemap = articulos.map((a) => ({

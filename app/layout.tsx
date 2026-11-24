@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { JsonLd, SITE_URL, clinicaJsonLd, sitioWebJsonLd } from "@/lib/seo";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import SuscribirseModal from "@/components/SuscribirseModal";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -106,6 +107,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <SuscribirseModal />
       </body>
     </html>
   );

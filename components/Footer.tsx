@@ -119,6 +119,7 @@ export default function Footer() {
             <a href="https://www.instagram.com/lentesdecontactomedellin/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
             <a href="https://share.google/fEwWsA3XU3lIVCjmE" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Google</a>
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <Link href="/politica-de-datos" className="hover:text-white transition-colors">Datos personales</Link>
             <a href="https://alamedida.substack.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">A la Medida</a>
             {/* Historia clínica de ortoqueratología: acceso restringido al equipo. */}
             <a

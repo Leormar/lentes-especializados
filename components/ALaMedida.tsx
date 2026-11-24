@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { obtenerPostsSubstack, type PostSubstack } from "@/lib/substack";
+import { BOLETIN } from "@/lib/boletin";
 
-const SUBSTACK_URL = "https://alamedida.substack.com";
+const SUBSTACK_URL = BOLETIN.url;
 
 /**
  * Área del boletín "A la Medida", el Substack del Dr. Orjuela. Aparece en la

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { articulos, type Articulo } from "@/lib/articulos";
 import ALaMedida from "@/components/ALaMedida";
+import SuscribirseForm from "@/components/SuscribirseForm";
+import { BOLETIN } from "@/lib/boletin";
 
 export const metadata: Metadata = {
   title: "Educación Visual — Queratocono y Lentes Especializados",
@@ -31,6 +33,21 @@ export default function BlogPage() {
       </section>
 
       <ALaMedida />
+
+      {/* En el blog la suscripción va a la vista, no en ventana: quien llega
+          aquí ya viene a leer. */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-4">
+        <div className="mx-auto max-w-xl rounded-2xl border-2 border-[#d7c874]/50 bg-[#fffbeb] p-7">
+          <h2 className="text-2xl font-bold text-[#2e3f8a] mb-2" style={{ fontFamily: "var(--font-display)" }}>
+            Reciba {BOLETIN.nombre} en su correo
+          </h2>
+          <p className="text-slate-600 text-sm leading-relaxed mb-5">
+            Cada entrega, un caso o una explicación de contactología
+            especializada. Gratis, y se da de baja cuando quiera.
+          </p>
+          <SuscribirseForm />
+        </div>
+      </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="flex gap-3 flex-wrap mb-10">
