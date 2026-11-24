@@ -48,7 +48,7 @@ const pasos: Paso[] = [
 const FOTO_SERVICIO: Record<string, string> = {
   esclerales: "/servicios/escleral-adaptado.jpg",
   "post-quirurgico": "/servicios/post-quirurgico-cicatrices.jpg",
-  "ojo-seco": "/servicios/ojo-seco.jpg",
+  "ojo-seco": "/servicios/ojo-seco-tincion.jpg",
 };
 
 const calcularResultado = (respuestas: string[]): Resultado => {

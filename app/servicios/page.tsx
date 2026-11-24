@@ -99,7 +99,8 @@ Los implantes de lente intraocular (IOL multifocal, EDOF, tórico) también pued
   },
   {
     id: "ojo-seco",
-    imagen: "/servicios/mediview-superficie-ocular.jpg",
+    imagen: "/servicios/ojo-seco-tincion.jpg",
+    imagenExtra: "/servicios/ojo-seco-tincion-detalle.jpg",
     titulo: "Ojo Seco Severo y Superficie Ocular",
     subtitulo: "Más allá de las lágrimas artificiales",
     descripcion: `El ojo seco severo es una enfermedad crónica de la superficie ocular que no se resuelve con lágrimas artificiales. Ofrecemos un protocolo integral que combina el diagnóstico preciso de la causa (deficiencia acuosa, disfunción de glándula de Meibomio, inflamación), el tratamiento específico, y cuando es apropiado, la adaptación de lentes esclerales como dispositivo terapéutico.
