@@ -33,6 +33,7 @@ Este diseño único ofrece ventajas extraordinarias para casos complejos: la có
   {
     id: "orthokeratologia",
     imagen: "/servicios/orthok-comparativa.jpg",
+    imagenExtra: "/servicios/orthok-diana.jpg",
     titulo: "Ortoqueratología · Control de Miopía",
     subtitulo: "Lentes nocturnos que corrigen la miopía mientras duerme — sin gafas ni lentes durante el día",
     descripcion: `La ortoqueratología (Ortho-K) utiliza lentes de contacto rígidos gas-permeables de geometría inversa, diseñados para usarse exclusivamente durante el sueño. Mientras el paciente duerme, el lente remodela de forma suave y controlada el epitelio corneal central: aplana la zona óptica y genera una zona periférica de tratamiento. Al retirar el lente en la mañana, la córnea mantiene temporalmente esa nueva forma y el paciente puede ver con claridad durante todo el día sin necesidad de gafas ni lentes de contacto blandos.
@@ -211,18 +212,36 @@ export default function ServiciosPage() {
               </div>
             </div>
 
-            {"imagen" in s && s.imagen && (
-              <div className="relative w-full rounded-2xl overflow-hidden mb-6 border border-blue-100 shadow-sm" style={{ height: 240 }}>
-                <Image
-                  src={s.imagen as string}
-                  alt={`${s.titulo} — ${s.subtitulo}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 720px"
-                  className={`object-cover ${("foco" in s && s.foco) || "object-center"}`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#1a2a5e]/30 to-transparent" />
-              </div>
-            )}
+            {"imagen" in s && s.imagen && (() => {
+              // Algunos servicios llevan dos fotos; entonces van en pareja y
+              // cada una ocupa la mitad del ancho, lo que cambia el `sizes`.
+              const fotos = [
+                s.imagen as string,
+                ("imagenExtra" in s ? s.imagenExtra : null) as string | null,
+              ].filter((src): src is string => Boolean(src));
+              const pareja = fotos.length > 1;
+
+              return (
+                <div className={`mb-6 ${pareja ? "grid gap-4 sm:grid-cols-2" : ""}`}>
+                  {fotos.map((src) => (
+                    <div
+                      key={src}
+                      className="relative w-full rounded-2xl overflow-hidden border border-blue-100 shadow-sm"
+                      style={{ height: 240 }}
+                    >
+                      <Image
+                        src={src}
+                        alt={`${s.titulo} — ${s.subtitulo}`}
+                        fill
+                        sizes={pareja ? "(max-width: 640px) 100vw, 360px" : "(max-width: 768px) 100vw, 720px"}
+                        className={`object-cover ${("foco" in s && s.foco) || "object-center"}`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#1a2a5e]/30 to-transparent" />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="md:col-span-2 space-y-4">
