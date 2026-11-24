@@ -32,7 +32,7 @@ Este diseño único ofrece ventajas extraordinarias para casos complejos: la có
   },
   {
     id: "orthokeratologia",
-    imagen: "/servicios/orthokeratologia.jpg",
+    imagen: "/servicios/orthok-comparativa.jpg",
     titulo: "Ortoqueratología · Control de Miopía",
     subtitulo: "Lentes nocturnos que corrigen la miopía mientras duerme — sin gafas ni lentes durante el día",
     descripcion: `La ortoqueratología (Ortho-K) utiliza lentes de contacto rígidos gas-permeables de geometría inversa, diseñados para usarse exclusivamente durante el sueño. Mientras el paciente duerme, el lente remodela de forma suave y controlada el epitelio corneal central: aplana la zona óptica y genera una zona periférica de tratamiento. Al retirar el lente en la mañana, la córnea mantiene temporalmente esa nueva forma y el paciente puede ver con claridad durante todo el día sin necesidad de gafas ni lentes de contacto blandos.
