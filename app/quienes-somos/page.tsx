@@ -43,8 +43,10 @@ const equipo = [
   },
   {
     nombre: "Dra. Laura Silva",
+    perfil: "https://laurasilvaquintero.com/",
     titulo: "MD · Oftalmóloga",
     inicial: "S",
+    foto: "/equipo/laura-silva.jpg",
     color: "from-[#b45309] to-[#d97706]",
     especialidades: ["Oftalmología general", "Superficie ocular y ojo seco", "Enfermedades del segmento anterior", "Diagnóstico con imágenes MediView"],
     bio: "Oftalmóloga especializada en superficie ocular y ojo seco. Su presencia en el equipo permite un manejo verdaderamente integral de condiciones como el síndrome de Sjögren, la rosácea ocular y el ojo seco severo, combinando el tratamiento médico con las soluciones de lentes del Dr. Orjuela.",

@@ -116,10 +116,47 @@ Los lentes esclerales en ojo seco actúan como una cámara de humedad permanente
   },
   {
     id: "mediview",
-    imagenes: [
-      "/servicios/mediview.jpg",
-      "/servicios/mediview-meibografia.jpg",
-      "/servicios/mediview-tincion-superficie.jpg",
+    imagenes: ["/servicios/mediview.jpg"],
+    video: {
+      src: "/servicios/mediview-nibut.mp4",
+      poster: "/servicios/mediview-nibut-poster.jpg",
+      pie: "Prueba de NIBUT grabada en consulta. Los anillos proyectados sobre la córnea se deforman en el momento en que la lágrima se rompe; el mapa de la derecha señala en rojo las zonas que se secan primero y el equipo calcula el tiempo exacto de ruptura.",
+    },
+    // Capturas del propio MediView del consultorio. Van con pie de foto porque
+    // sin explicación una imagen de un ojo no le dice nada al paciente.
+    galeria: [
+      {
+        src: "/servicios/mediview-capa-lipidica.jpg",
+        pie: "Interferometría de la capa lipídica: mide el grosor de la película de grasa que impide que la lágrima se evapore. En este ojo el resultado es nivel 4, por encima de 80 nm.",
+      },
+      {
+        src: "/servicios/mediview-menisco-lagrimal.jpg",
+        pie: "Altura del menisco lagrimal: la franja de lágrima que se acumula sobre el párpado inferior. Aquí mide 0,20 mm, el límite por debajo del cual hablamos de déficit acuoso.",
+      },
+      {
+        src: "/servicios/mediview-nibut-placido.jpg",
+        pie: "NIBUT con anillos de Plácido: los anillos proyectados sobre la córnea permiten cronometrar en cuánto tiempo se rompe la lágrima, sin tocar el ojo y sin colorante.",
+      },
+      {
+        src: "/servicios/mediview-meibografia-ir.jpg",
+        pie: "Meibografía infrarroja: fotografía del interior del párpado que muestra las glándulas de Meibomio y permite ver cuántas se han atrofiado o perdido.",
+      },
+      {
+        src: "/servicios/mediview-azul-cobalto.jpg",
+        pie: "Fluoresceína con luz azul de cobalto: el colorante se adhiere a las zonas de epitelio dañado y las vuelve visibles sobre la córnea.",
+      },
+      {
+        src: "/servicios/mediview-fluoresceina.jpg",
+        pie: "Tinción con fluoresceína a dos aumentos: el mismo ojo de cerca y más abierto, para mapear hasta dónde llega el daño de la superficie.",
+      },
+      {
+        src: "/servicios/mediview-segmento-anterior.jpg",
+        pie: "Fotografía de segmento anterior de ambos ojos en alta resolución: queda como registro para comparar el antes y el después del tratamiento.",
+      },
+      {
+        src: "/servicios/mediview-conjuntiva.jpg",
+        pie: "Corte con lámpara de hendidura sobre la conjuntiva: la franja de luz revela el relieve y los vasos de la superficie del ojo.",
+      },
     ],
     titulo: "Imágenes MediView · Diagnóstico de Ojo Seco",
     subtitulo: "Valoración diagnóstica avanzada de superficie ocular y ojo seco",
@@ -288,6 +325,57 @@ export default function ServiciosPage() {
                 </div>
               </div>
             </div>
+
+            {"video" in s && s.video && (
+              <figure className="mt-12 rounded-2xl overflow-hidden border border-blue-100 shadow-sm bg-white">
+                {/* Vídeo mudo y sin autoplay: el paciente decide verlo. */}
+                <video
+                  className="w-full block bg-[#1b1d21]"
+                  src={s.video.src}
+                  poster={s.video.poster}
+                  controls
+                  muted
+                  playsInline
+                  preload="none"
+                />
+                <figcaption className="px-5 py-4 text-sm text-slate-600 leading-relaxed">
+                  {s.video.pie}
+                </figcaption>
+              </figure>
+            )}
+
+            {"galeria" in s && s.galeria && (
+              <div className="mt-12">
+                <h3 className="text-xl font-bold text-[#2e3f8a] mb-2">
+                  Exámenes reales tomados en el consultorio
+                </h3>
+                <p className="text-slate-500 text-sm mb-6 max-w-2xl leading-relaxed">
+                  Todas estas imágenes salen de nuestro propio equipo MediView. Así se ve
+                  cada examen y esto es lo que mide.
+                </p>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {s.galeria.map((g) => (
+                    <figure
+                      key={g.src}
+                      className="rounded-2xl overflow-hidden border border-blue-100 shadow-sm bg-white"
+                    >
+                      <div className="relative w-full aspect-[16/10] bg-[#1b1d21]">
+                        <Image
+                          src={g.src}
+                          alt={g.pie}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 460px"
+                          className="object-contain"
+                        />
+                      </div>
+                      <figcaption className="px-5 py-4 text-sm text-slate-600 leading-relaxed">
+                        {g.pie}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {i < servicios.length - 1 && (
               <div className="mt-16 border-b border-sky-100" />
