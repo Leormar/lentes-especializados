@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const servicios = [
   {
     id: "esclerales",
-    imagen: "/servicios/mediview-escleral-fluoresceina.jpg",
+    imagen: "/servicios/escleral-adaptado.jpg",
     titulo: "Lentes Esclerales",
     subtitulo: "El estándar de oro en contactología de alta complejidad",
     descripcion: `Los lentes esclerales son lentes de contacto rígidos de gran diámetro que descansan completamente sobre la esclerótica (la parte blanca del ojo), creando un espacio entre el lente y la córnea que se llena de solución salina.

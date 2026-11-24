@@ -46,7 +46,7 @@ const pasos: Paso[] = [
 
 /* Foto real del servicio recomendado — reemplaza el icono genérico */
 const FOTO_SERVICIO: Record<string, string> = {
-  esclerales: "/servicios/mediview-escleral-fluoresceina.jpg",
+  esclerales: "/servicios/escleral-adaptado.jpg",
   "post-quirurgico": "/servicios/post-quirurgico.jpg",
   "ojo-seco": "/servicios/ojo-seco.jpg",
 };
@@ -120,7 +120,7 @@ export default function SelectorInteractivo() {
       <div className="bg-[#2e3f8a] text-white rounded-2xl p-8 text-center">
         <div className="relative w-full max-w-sm mx-auto aspect-[16/10] rounded-xl overflow-hidden mb-6 ring-2 ring-[#d7c874]/40">
           <Image
-            src={FOTO_SERVICIO[resultado.servicio] ?? "/servicios/mediview-escleral-fluoresceina.jpg"}
+            src={FOTO_SERVICIO[resultado.servicio] ?? "/servicios/escleral-adaptado.jpg"}
             alt={resultado.titulo}
             fill
             sizes="(max-width: 640px) 90vw, 384px"
