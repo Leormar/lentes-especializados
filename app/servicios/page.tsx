@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ServiciosPestanas, { type Servicio } from "@/components/ServiciosPestanas";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 export const metadata: Metadata = {
   title: "Lentes Esclerales, RGP e Híbridos en Medellín",
@@ -237,7 +238,7 @@ export default function ServiciosPage() {
               Usar el orientador
             </Link>
             <a
-              href="https://wa.me/573113154316"
+              href={enlaceWhatsApp()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shine bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"

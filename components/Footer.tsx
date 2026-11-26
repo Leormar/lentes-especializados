@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ARIA, ASISTENTE, enlaceAsistente, enlaceWhatsApp } from "@/lib/contacto";
 
 export default function Footer() {
   return (
@@ -21,7 +22,7 @@ export default function Footer() {
               <InstagramIcon />
             </a>
             <a
-              href="https://wa.me/573113154316"
+              href={enlaceWhatsApp()}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -60,9 +61,16 @@ export default function Footer() {
             <li>Piso 16 · Of. 1628 · Medellín</li>
             <li>Lun–Vie · 8:00 am – 5:00 pm</li>
             <li>
-              <a href="https://wa.me/573113154316" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                +57 311 315 4316
+              <a href={enlaceWhatsApp()} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                {ARIA.visible}
               </a>
+              <span className="block text-xs text-sky-300/80">Aria · responde a cualquier hora</span>
+            </li>
+            <li>
+              <a href={enlaceAsistente()} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                {ASISTENTE.visible}
+              </a>
+              <span className="block text-xs text-sky-300/80">Asistente · horario de oficina</span>
             </li>
             <li>
               <a href="mailto:info@lentesespecializados.com" className="hover:text-white transition-colors">

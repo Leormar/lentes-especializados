@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 type Slide = {
   /** Imagen de fondo. Se ignora si el slide trae video. */
@@ -23,7 +24,7 @@ const slides: Slide[] = [
     titulo: "Lentes Esclerales para Córneas Irregulares",
     subtitulo: "La solución cuando los demás han fallado. Adaptamos lentes para queratocono, post-cirugía y ojo seco severo.",
     cta: "Agendar consulta",
-    ctaHref: "https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta",
+    ctaHref: enlaceWhatsApp("Hola, me interesa agendar una consulta"),
     bg: "from-[#1a2a5e] to-[#2e3f8a]",
   },
   {
@@ -47,7 +48,7 @@ const slides: Slide[] = [
     titulo: "Colocarse el Lente Sin Miedo",
     subtitulo: "Le enseñamos la técnica paso a paso. La mayoría de pacientes lo domina en la primera sesión de entrenamiento.",
     cta: "Agendar entrenamiento",
-    ctaHref: "https://wa.me/573113154316?text=Hola,%20quiero%20aprender%20a%20colocarme%20los%20lentes",
+    ctaHref: enlaceWhatsApp("Hola, quiero aprender a colocarme los lentes"),
     bg: "from-[#1a2a5e] to-[#2e3f8a]",
   },
   {
@@ -71,7 +72,7 @@ const slides: Slide[] = [
     titulo: "Soluciones y Accesorios Recomendados",
     subtitulo: "No todas las soluciones sirven para todos los lentes. Le indicamos cuál corresponde a su tipo de adaptación.",
     cta: "Consultar por WhatsApp",
-    ctaHref: "https://wa.me/573113154316?text=Hola,%20quiero%20asesoría%20sobre%20el%20cuidado%20de%20mis%20lentes",
+    ctaHref: enlaceWhatsApp("Hola, quiero asesoría sobre el cuidado de mis lentes"),
     bg: "from-[#1a2a5e] to-[#3a5cc2]",
   },
   {
@@ -79,7 +80,7 @@ const slides: Slide[] = [
     titulo: "Revisión y Seguimiento Periódico",
     subtitulo: "Controlamos el estado del lente y la salud de su córnea en cada cita. La adaptación se ajusta con el tiempo.",
     cta: "Agendar control",
-    ctaHref: "https://wa.me/573113154316?text=Hola,%20quiero%20agendar%20un%20control%20de%20mis%20lentes",
+    ctaHref: enlaceWhatsApp("Hola, quiero agendar un control de mis lentes"),
     bg: "from-[#2e3f8a] to-[#1a2a5e]",
   },
 ];
