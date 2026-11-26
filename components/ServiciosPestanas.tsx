@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 export type Servicio = {
   id: string;
@@ -183,7 +184,7 @@ export default function ServiciosPestanas({ servicios }: { servicios: Servicio[]
                     <p className="font-bold text-lg mb-1">{s.precio}</p>
                     <p className="text-sky-200 text-xs leading-relaxed">{s.nota}</p>
                     <a
-                      href={`https://wa.me/573113154316?text=Hola,%20me%20interesa%20el%20servicio%20de%20${encodeURIComponent(s.titulo)}`}
+                      href={enlaceWhatsApp(`Hola, me interesa el servicio de ${s.titulo}`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn-shine mt-4 block text-center bg-[#25D366] text-white px-4 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b858] transition-colors"

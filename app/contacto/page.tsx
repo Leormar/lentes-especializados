@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import MapaUbicacion from "@/components/MapaUbicacion";
 import { NEGOCIO } from "@/lib/seo";
+import { ARIA, ASISTENTE, HORARIO_ASISTENTE, enlaceAsistente, enlaceWhatsApp } from "@/lib/contacto";
 
 export const metadata: Metadata = {
   title: "Agende su consulta en Medellín",
@@ -44,14 +45,30 @@ export default function ContactoPage() {
                 <div>
                   <p className="font-semibold text-[#2e3f8a]">WhatsApp — Aria</p>
                   <a
-                    href="https://wa.me/573113154316"
+                    href={enlaceWhatsApp()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#5b80d4] hover:underline"
                   >
-                    +57 311 315 4316
+                    {ARIA.visible}
                   </a>
-                  <p className="text-xs text-slate-400 mt-0.5">Aria responde 24/7. El equipo humano responde en horario de atención.</p>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Nuestra asistente virtual. Responde al instante, a cualquier hora, y
+                    pasa el caso a una persona cuando hace falta.
+                  </p>
+
+                  <p className="font-semibold text-[#2e3f8a] mt-4">WhatsApp — asistente del consultorio</p>
+                  <a
+                    href={enlaceAsistente()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#5b80d4] hover:underline"
+                  >
+                    {ASISTENTE.visible}
+                  </a>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Si prefiere hablar con una persona desde el principio. {HORARIO_ASISTENTE}.
+                  </p>
                 </div>
               </div>
 
@@ -106,7 +123,7 @@ export default function ContactoPage() {
               Nuestra asistente virtual Aria puede agendar su cita, responder preguntas sobre servicios y orientarle sobre el tipo de lente que puede necesitar, en cualquier momento del día.
             </p>
             <a
-              href="https://wa.me/573113154316?text=Hola,%20Aria.%20Me%20gustaría%20agendar%20una%20consulta."
+              href={enlaceWhatsApp("Hola, Aria. Me gustaría agendar una consulta.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shine mt-4 inline-block bg-[#25D366] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#20b858] transition-colors"

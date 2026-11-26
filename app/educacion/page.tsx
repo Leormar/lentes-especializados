@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { articulos } from "@/lib/articulos";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 export const metadata: Metadata = {
   title: "Educación",
@@ -81,7 +82,7 @@ export default function EducacionPage() {
               ← Volver al inicio
             </Link>
             <a
-              href="https://wa.me/573113154316?text=Hola,%20quisiera%20recibir%20información%20educativa%20de%20PROLENS"
+              href={enlaceWhatsApp("Hola, quisiera recibir información educativa de PROLENS")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shine inline-block bg-[#25D366] text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-[#20b858] transition-colors"

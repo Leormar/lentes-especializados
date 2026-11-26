@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import SectionBadge from "@/components/SectionBadge";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 export const metadata: Metadata = {
   title: "Quiénes somos",
@@ -300,7 +301,7 @@ export default function QuienesSomosPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/573113154316"
+              href={enlaceWhatsApp()}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shine bg-[#25D366] text-white px-6 py-3 rounded-full font-bold hover:bg-[#20b858] transition-colors"

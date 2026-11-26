@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { articulos, getArticulo } from "@/lib/articulos";
 import { JsonLd, articuloJsonLd, migasJsonLd } from "@/lib/seo";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -85,7 +86,7 @@ export default async function ArticuloPage({ params }: Props) {
           <p className="font-bold text-lg mb-2">¿Tiene esta condición o conoce a alguien que la tenga?</p>
           <p className="text-sky-200 text-sm mb-4">Una consulta puede cambiar completamente su experiencia visual.</p>
           <a
-            href={`https://wa.me/573113154316?text=Hola,%20leí%20el%20artículo%20sobre%20${encodeURIComponent(articulo.titulo)}%20y%20me%20gustaría%20agendar%20una%20consulta`}
+            href={enlaceWhatsApp(`Hola, leí el artículo sobre ${articulo.titulo} y me gustaría agendar una consulta`)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-shine inline-block bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"

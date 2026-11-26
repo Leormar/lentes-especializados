@@ -1,10 +1,11 @@
+import { enlaceWhatsApp } from "@/lib/contacto";
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20una%20consulta%20sobre%20lentes%20especializados"
+      href={enlaceWhatsApp("Hola, me interesa una consulta sobre lentes especializados")}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Agendar cita por WhatsApp"
+      aria-label="Escribirle a Aria por WhatsApp. Es nuestra asistente virtual, responde al instante a cualquier hora y puede atenderlo con notas de voz."
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] text-white shadow-lg rounded-full px-4 py-3 font-medium text-sm hover:bg-[#20b858] transition-all hover:scale-105 active:scale-95"
     >
       <WhatsAppIcon />

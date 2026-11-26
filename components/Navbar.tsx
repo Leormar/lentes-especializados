@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 const links = [
   { href: "/",              label: "Inicio" },
@@ -78,7 +79,7 @@ export default function Navbar() {
           ))}
 
           <a
-            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta"
+            href={enlaceWhatsApp("Hola, me interesa agendar una consulta")}
             target="_blank"
             rel="noopener noreferrer"
             className="cta-btn cta-solid"
@@ -114,7 +115,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://wa.me/573113154316?text=Hola,%20me%20interesa%20agendar%20una%20consulta"
+            href={enlaceWhatsApp("Hola, me interesa agendar una consulta")}
             target="_blank"
             rel="noopener noreferrer"
             className="cta-btn cta-solid block text-center mt-3"

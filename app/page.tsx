@@ -6,6 +6,7 @@ import ReseñasSection from "@/components/ReseñasSection";
 import ALaMedida from "@/components/ALaMedida";
 import SectionBadge from "@/components/SectionBadge";
 import MapaUbicacion from "@/components/MapaUbicacion";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 export default function Home() {
   return (
@@ -147,7 +148,7 @@ function MapaSection() {
             </div>
             <div className="text-sm">
               <p className="font-bold text-[#2e3f8a] mb-1">WhatsApp · Aria</p>
-              <a href="https://wa.me/573113154316" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-semibold hover:underline">+57 311 315 4316</a>
+              <a href={enlaceWhatsApp()} target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-semibold hover:underline">+57 311 315 4316</a>
               <p className="text-slate-400 text-xs mt-0.5">Responde 24/7</p>
             </div>
           </div>

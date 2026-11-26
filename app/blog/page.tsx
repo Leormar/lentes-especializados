@@ -4,6 +4,7 @@ import { articulos, type Articulo } from "@/lib/articulos";
 import ALaMedida from "@/components/ALaMedida";
 import SuscribirseForm from "@/components/SuscribirseForm";
 import { BOLETIN } from "@/lib/boletin";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 export const metadata: Metadata = {
   title: "Educación Visual — Queratocono y Lentes Especializados",
@@ -120,7 +121,7 @@ export default function BlogPage() {
             Aria, nuestra asistente virtual, puede orientarle sobre su condición y agendar una consulta.
           </p>
           <a
-            href="https://wa.me/573113154316"
+            href={enlaceWhatsApp()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-[#25D366] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#20b858] transition-colors"

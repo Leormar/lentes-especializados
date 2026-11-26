@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 import { useState } from "react";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 type Paso = {
   pregunta: string;
@@ -132,7 +133,7 @@ export default function SelectorInteractivo() {
         <p className="text-sky-100 leading-relaxed mb-6 max-w-md mx-auto">{resultado.descripcion}</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
-            href={`https://wa.me/573113154316?text=Hola,%20el%20selector%20me%20recomendó%20lentes%20${resultado.servicio}.%20Me%20gustaría%20agendar%20una%20consulta.`}
+            href={enlaceWhatsApp(`Hola, el selector me recomendó lentes ${resultado.servicio}. Me gustaría agendar una consulta.`)}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#25D366] text-white px-6 py-3 rounded-full font-medium hover:bg-[#20b858] transition-colors"

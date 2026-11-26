@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { enlaceWhatsApp } from "@/lib/contacto";
 
 const condiciones = [
   { value: "", label: "Seleccione una opción" },
@@ -26,7 +27,7 @@ export default function ContactForm() {
       condicion && `Motivo de consulta: ${condicion}.`,
       mensaje && `Mensaje: ${mensaje}`,
     ].filter(Boolean);
-    const url = `https://wa.me/573113154316?text=${encodeURIComponent(partes.join(" "))}`;
+    const url = enlaceWhatsApp(partes.join(" "));
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
